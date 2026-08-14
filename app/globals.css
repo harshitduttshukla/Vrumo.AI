@@ -26,21 +26,11 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+  background: var(--bg);
 }
 
 body {
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
   font-family: var(--font-body);
   line-height: 1.5;
@@ -103,54 +93,90 @@ h1, h2, h3 {
   font-family: var(--font-mono);
 }
 
-/* ---------------- NAV ---------------- */
-header.nav {
+/* ---------------- FLOATING PILL NAV ---------------- */
+header.nav-container {
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
   right: 0;
   z-index: 100;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  background: rgba(10, 12, 16, 0.72);
-  border-bottom: 1px solid var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  pointer-events: none;
 }
 
-.nav-inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 18px 32px;
+.nav-pill {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 860px;
+  height: 52px;
+  padding: 0 14px 0 16px;
+  background: rgba(14, 17, 23, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45),
+              0 0 0 1px rgba(255, 255, 255, 0.03),
+              inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.nav-pill:hover {
+  border-color: rgba(108, 140, 255, 0.25);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55),
+              0 0 20px rgba(108, 140, 255, 0.06),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .logo {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 15.5px;
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
   gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
 }
 
 .logo-img {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
 }
 
+.logo-text {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
 .nav-links {
   display: flex;
-  gap: 32px;
-  font-size: 14px;
+  align-items: center;
+  gap: 26px;
+  font-size: 13.5px;
   color: var(--text-muted);
+  font-family: var(--font-body);
 }
 
 .nav-links a {
+  color: var(--text-muted);
+  font-weight: 400;
   transition: color 0.2s ease;
 }
 
@@ -158,24 +184,109 @@ header.nav {
   color: var(--text);
 }
 
-.nav-cta {
-  font-size: 13.5px;
+.nav-links a.nav-link-cta {
+  color: var(--accent);
   font-family: var(--font-mono);
-  padding: 9px 18px;
-  border: 1px solid var(--border);
+  font-size: 12.5px;
+  padding: 6px 14px;
   border-radius: 100px;
-  color: var(--text);
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.nav-cta:hover {
-  border-color: var(--accent);
   background: var(--accent-soft);
+  border: 1px solid rgba(108, 140, 255, 0.25);
+  transition: all 0.2s ease;
 }
 
-@media (max-width: 800px) {
+.nav-links a.nav-link-cta:hover {
+  color: #fff;
+  background: rgba(108, 140, 255, 0.28);
+  border-color: var(--accent);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobile-toggle .bar {
+  width: 18px;
+  height: 1.5px;
+  background: var(--text-muted);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.mobile-toggle .bar.open:first-child {
+  transform: translateY(3.25px) rotate(45deg);
+  background: var(--text);
+}
+
+.mobile-toggle .bar.open:last-child {
+  transform: translateY(-3.25px) rotate(-45deg);
+  background: var(--text);
+}
+
+.mobile-menu {
+  pointer-events: auto;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 860px;
+  background: rgba(14, 17, 23, 0.95);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+  animation: fadeInDown 0.2s ease forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-menu a {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  color: var(--text);
+}
+
+.mobile-menu a.mobile-cta {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  margin-top: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-soft);
+}
+
+@media (max-width: 768px) {
   .nav-links {
     display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .nav-pill {
+    height: 48px;
   }
 }
 
@@ -421,10 +532,13 @@ header.nav {
 
 /* ---------------- DEVICE MOCKUPS ---------------- */
 .card {
-  background: var(--surface);
+  background: rgba(18, 21, 28, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
 }
 
 /* Calling mock */
@@ -593,7 +707,9 @@ header.nav {
 
 /* ---------------- HOW IT WORKS ---------------- */
 .flow-section {
-  background: var(--surface);
+  background: rgba(14, 17, 24, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-top: 1px solid var(--border-soft);
   border-bottom: 1px solid var(--border-soft);
 }
@@ -640,8 +756,16 @@ header.nav {
   padding: 8px 14px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: var(--bg);
+  background: rgba(23, 27, 36, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   white-space: nowrap;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.flow-steps .step:hover {
+  border-color: var(--accent);
+  background: rgba(108, 140, 255, 0.12);
 }
 
 .flow-steps .arrow {
