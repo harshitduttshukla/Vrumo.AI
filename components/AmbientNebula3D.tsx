@@ -1,18 +1,23 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 export function AmbientNebula3D() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || typeof window === 'undefined') return;
 
     // --- Scene, Camera, Renderer ---
     const scene = new THREE.Scene();
-    // Soft subtle depth fog
     scene.fog = new THREE.FogExp2(0x0a0c10, 0.0007);
 
     const camera = new THREE.PerspectiveCamera(
@@ -23,11 +28,18 @@ export function AmbientNebula3D() {
     );
     camera.position.z = 700;
 
-    const renderer = new THREE.WebGLRenderer({
-      alpha: true,
-      antialias: true,
-      powerPreference: 'high-performance',
-    });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        alpha: true,
+        antialias: true,
+        powerPreference: 'high-performance',
+      });
+    } catch (e) {
+      console.warn('WebGL not supported:', e);
+      return;
+    }
+
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x0a0c10, 1);
@@ -65,7 +77,6 @@ export function AmbientNebula3D() {
     ];
 
     // --- Layer 1: Global Full-Height Nebula Stream (Top to Bottom) ---
-    // Total vertical span covers the entire scroll depth (-4500 to +1500)
     const nebulaCount = 2800;
     const nebulaGeo = new THREE.BufferGeometry();
     const nebulaPositions = new Float32Array(nebulaCount * 3);
@@ -74,9 +85,7 @@ export function AmbientNebula3D() {
 
     for (let i = 0; i < nebulaCount; i++) {
       const i3 = i * 3;
-
-      // Broad spatial distribution along the full page vertical height
-      const y = (Math.random() - 0.7) * 5500; // From +1650 down to -3850
+      const y = (Math.random() - 0.7) * 5500;
       const radius = 250 + Math.random() * 850;
       const angle = Math.random() * Math.PI * 2;
 
@@ -187,15 +196,13 @@ export function AmbientNebula3D() {
       targetX += (mouseX - targetX) * 0.04;
       targetY += (mouseY - targetY) * 0.04;
 
-      // Smooth scroll interpolation (tracks page position proportionally)
+      // Smooth scroll interpolation
       currentScroll += (targetScroll - currentScroll) * 0.08;
 
-      // Camera smoothly travels down the full 3D galaxy as the user scrolls
       camera.position.x = targetX * 0.7;
       camera.position.y = -targetY * 0.5 - currentScroll * 0.85;
       camera.lookAt(targetX * 0.2, -currentScroll * 0.85, 0);
 
-      // Continuous organic 3D rotations and drifting
       nebulaPoints.rotation.y = elapsedTime * 0.04;
       nebulaPoints.rotation.z = Math.sin(elapsedTime * 0.02) * 0.06;
 
@@ -207,7 +214,7 @@ export function AmbientNebula3D() {
 
     animate();
 
-    // --- Cleanup on Component Unmount ---
+    // --- Cleanup ---
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('mousemove', handleMouseMove);
@@ -225,7 +232,7 @@ export function AmbientNebula3D() {
         container.removeChild(renderer.domElement);
       }
     };
-  }, []);
+  }, [mounted]);
 
   return (
     <div
