@@ -1,12 +1,21 @@
 import React from 'react';
+import Image from 'next/image';
 
 export function Navbar() {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <div className="logo">
-          <span className="dot"></span>VrumoAI
-        </div>
+        <a href="#" className="logo">
+          <Image
+            src="/logo.png"
+            alt="VrumoAI"
+            width={34}
+            height={34}
+            className="logo-img"
+            priority
+          />
+          <span>VrumoAI</span>
+        </a>
         <nav className="nav-links">
           <a href="#solutions">Solutions</a>
           <a href="#calling-agent">Calling</a>

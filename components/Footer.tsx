@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -6,7 +7,14 @@ export function Footer() {
       <div className="wrap footer-inner">
         <div className="footer-brand">
           <div className="logo">
-            <span className="dot"></span>VrumoAI
+            <Image
+              src="/logo.png"
+              alt="VrumoAI"
+              width={34}
+              height={34}
+              className="logo-img"
+            />
+            <span>VrumoAI</span>
           </div>
           <p>AI agents built for real work.</p>
         </div>
