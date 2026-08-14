@@ -17,13 +17,13 @@ export function JobApplyAgentSection() {
           centered={false}
         />
 
-        <div className="max-w-xl mx-auto rounded-2xl bg-slate-50 border border-slate-200 p-5 sm:p-6 shadow-sm text-left">
-          <div className="space-y-0 divide-y divide-slate-200">
+        <div className="max-w-xl mx-auto bg-slate-50 border border-slate-200 p-20 sm:p-6 shadow-sm text-left">
+          <div className="m-20 space-y-0 divide-y divide-slate-200">
             {mockJobs.map((job) => (
-              <div key={job.title} className="py-3.5 first:pt-0 last:pb-0 flex items-center justify-between gap-3 text-xs font-mono">
+              <div key={job.title} className=" first:pt-0 last:pb-0 flex items-center justify-between gap-3 text-xs font-mono">
                 <div>
-                  <div className="font-bold text-[#0f172a] text-sm">{job.title}</div>
-                  <div className="text-slate-400 text-[11px] font-normal mt-0.5">{job.company}</div>
+                  <div className="p-20 font-bold text-[#0f172a] text-sm">{job.title}</div>
+
                 </div>
 
                 <div className="flex items-center gap-3">

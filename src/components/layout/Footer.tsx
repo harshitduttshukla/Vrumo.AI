@@ -4,7 +4,6 @@ const footerLinks = [
   { label: 'WhatsApp AI', href: '#whatsapp-ai' },
   { label: 'CRM', href: '#crm-integration' },
   { label: 'Job Agent', href: '#job-apply-agent' },
-  { label: 'Contact', href: '#contact' },
 ];
 
 export function Footer() {
@@ -35,10 +34,7 @@ export function Footer() {
 
         <div className="pt-6 flex items-center justify-between font-mono text-[11px] text-slate-400">
           <p>© 2026 VrumoAI. All rights reserved.</p>
-          <div className="flex items-center gap-1.5 text-emerald-500 font-bold">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            Active
-          </div>
+
         </div>
       </div>
     </footer>

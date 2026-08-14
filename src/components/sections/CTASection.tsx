@@ -27,7 +27,7 @@ export function CTASection() {
             Tell us the workflow you want to automate and we'll design the right AI solution around it.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className=" flex flex-wrap items-center justify-center gap-3">
             <Button href="#" size="md" id="cta-book-demo">
               Book a Free Demo
               <ArrowRight size={14} />
