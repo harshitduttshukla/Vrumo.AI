@@ -15,9 +15,7 @@ export function CTASection() {
           transition={{ duration: 0.45 }}
           className="max-w-xl mx-auto"
         >
-          <span className="block text-xs font-mono font-bold tracking-[0.2em] uppercase text-blue-600 mb-3">
-            START A PROJECT
-          </span>
+
 
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0f172a] mb-4 leading-tight">
             What should your AI agent do?

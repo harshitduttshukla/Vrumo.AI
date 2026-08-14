@@ -13,7 +13,7 @@ export function AboutSection() {
     <section id="about" className="section-padding relative bg-white">
       <div className="container-custom relative">
         <SectionHeader
-          label="ABOUT VRUMOAI"
+          label=""
           title="We build AI that does more than respond."
           centered={false}
         />
