@@ -1,66 +1,49 @@
 import React from 'react';
 
+const steps = [
+  {
+    number: '01',
+    title: 'Map the workflow',
+    text: 'We learn the process, edge cases, tools, and business rules that make your workflow unique.',
+    detail: 'Discovery · Workflow design',
+  },
+  {
+    number: '02',
+    title: 'Build the agent',
+    text: 'We connect the right models, knowledge, integrations, and guardrails into one reliable system.',
+    detail: 'Build · Integrate · Test',
+  },
+  {
+    number: '03',
+    title: 'Launch and improve',
+    text: 'Your agent goes live with visibility built in, then gets sharper as real work moves through it.',
+    detail: 'Deploy · Monitor · Iterate',
+  },
+];
+
 export function HowItWorks() {
   return (
-    <section className="section flow-section">
+    <section className="section process-section" id="process">
       <div className="wrap">
-        <div className="section-head" style={{ marginBottom: '50px' }}>
-          <div className="eyebrow">How it works</div>
-          <h2>From input to action.</h2>
+        <div className="section-heading-row process-heading">
+          <div>
+            <div className="eyebrow">How it works</div>
+            <h2>From messy process<br />to working system.</h2>
+          </div>
+          <p>No off-the-shelf chatbot. We design around the job your team actually needs done.</p>
         </div>
-
-        <div className="flow-row">
-          <div className="flow-name">
-            Voice Automation
-            <span>Call → Qualify → CRM</span>
-          </div>
-          <div className="flow-steps">
-            <span className="step">CALL</span>
-            <span className="arrow">→</span>
-            <span className="step">AI AGENT</span>
-            <span className="arrow">→</span>
-            <span className="step">UNDERSTAND</span>
-            <span className="arrow">→</span>
-            <span className="step">QUALIFY</span>
-            <span className="arrow">→</span>
-            <span className="step">CRM UPDATED</span>
-          </div>
-        </div>
-
-        <div className="flow-row">
-          <div className="flow-name">
-            Messaging Automation
-            <span>WhatsApp → Capture → Follow-up</span>
-          </div>
-          <div className="flow-steps">
-            <span className="step">MESSAGE</span>
-            <span className="arrow">→</span>
-            <span className="step">AI AGENT</span>
-            <span className="arrow">→</span>
-            <span className="step">UNDERSTAND</span>
-            <span className="arrow">→</span>
-            <span className="step">CAPTURE LEAD</span>
-            <span className="arrow">→</span>
-            <span className="step">FOLLOW-UP SET</span>
-          </div>
-        </div>
-
-        <div className="flow-row">
-          <div className="flow-name">
-            Application Automation
-            <span>Job → Match → Apply</span>
-          </div>
-          <div className="flow-steps">
-            <span className="step">JOB POSTING</span>
-            <span className="arrow">→</span>
-            <span className="step">AI AGENT</span>
-            <span className="arrow">→</span>
-            <span className="step">MATCH SCORE</span>
-            <span className="arrow">→</span>
-            <span className="step">PREPARE</span>
-            <span className="arrow">→</span>
-            <span className="step">APPLIED</span>
-          </div>
+        <div className="process-grid">
+          {steps.map((step, index) => (
+            <article className="process-card" key={step.number}>
+              <div className="process-top">
+                <span className="process-number mono">{step.number}</span>
+                {index < steps.length - 1 && <span className="process-arrow" aria-hidden="true">→</span>}
+              </div>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+              <span className="process-detail mono">{step.detail}</span>
+            </article>
+          ))}
         </div>
       </div>
     </section>

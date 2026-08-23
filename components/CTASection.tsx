@@ -1,40 +1,21 @@
-'use client';
-
 import React from 'react';
-import { Blaze } from '@/components/canvasui/Blaze';
 
 export function CTASection() {
   return (
-    <Blaze
-      height={0.97}
-      distortion={0.6}
-      distortionScale={0.5}
-      speed={1}
-      sparks={0.65}
-      sparkDensity={1.5}
-      sparkSize={1.1}
-      layers={5}
-      smoke={0.5}
-      glow={1.5}
-      sparkColor={[1, 0.42, 0.051]}
-      smokeColor={[1, 0.4314, 0.102]}
-      className="w-full"
-    >
-      <section className="cta-section" id="cta" style={{ position: 'relative' }}>
-        <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="eyebrow" style={{ justifyContent: 'center' }}>
-            Start here
-          </div>
-          <h2>What should your AI agent do?</h2>
-          <p>
-            Tell us the workflow you want to automate, and we&apos;ll design the
-            right AI system around it.
-          </p>
-          <a className="btn btn-primary" href="mailto:hello@vrumoai.com">
-            Tell us your workflow →
+    <section className="cta-section" id="cta">
+      <div className="cta-grid" aria-hidden="true" />
+      <div className="cta-glow" aria-hidden="true" />
+      <div className="wrap cta-inner">
+        <div className="cta-status"><i /> Taking on new builds</div>
+        <h2>What should your<br /><span>AI agent do?</span></h2>
+        <p>Walk us through the workflow that slows your team down. We’ll help you turn it into a system that runs.</p>
+        <div className="cta-actions">
+          <a className="btn btn-primary btn-large" href="mailto:hello@vrumoai.com?subject=I%20want%20to%20build%20an%20AI%20agent">
+            Tell us your workflow <span aria-hidden="true">↗</span>
           </a>
+          <span>hello@vrumoai.com</span>
         </div>
-      </section>
-    </Blaze>
+      </div>
+    </section>
   );
 }

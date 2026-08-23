@@ -1,15 +1,23 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="nav-container">
+    <header className={`nav-container ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="nav-pill">
-        <a href="#" className="logo">
+        <a href="#top" className="logo" aria-label="VrumoAI home">
           <Image
             src="/logo.png"
             alt="VrumoAI"
@@ -22,20 +30,20 @@ export function Navbar() {
         </a>
 
         <nav className="nav-links">
-          <a href="#solutions">solutions</a>
-          <a href="#calling-agent">calling</a>
-          <a href="#whatsapp-ai">whatsapp</a>
-          <a href="#crm-integration">crm</a>
-          <a href="#job-apply-agent">job agent</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#process">How it works</a>
+          <a href="#integrations">Integrations</a>
           <a href="#cta" className="nav-link-cta">
-            start a project
+            Start a project <span aria-hidden="true">↗</span>
           </a>
         </nav>
 
         <button
           className="mobile-toggle"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle Navigation Menu"
+          aria-label="Toggle navigation menu"
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
           <span className={`bar ${mobileMenuOpen ? 'open' : ''}`}></span>
           <span className={`bar ${mobileMenuOpen ? 'open' : ''}`}></span>
@@ -43,30 +51,24 @@ export function Navbar() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="mobile-menu">
+        <nav className="mobile-menu" id="mobile-navigation">
           <a href="#solutions" onClick={() => setMobileMenuOpen(false)}>
-            solutions
+            Solutions
           </a>
-          <a href="#calling-agent" onClick={() => setMobileMenuOpen(false)}>
-            calling
+          <a href="#process" onClick={() => setMobileMenuOpen(false)}>
+            How it works
           </a>
-          <a href="#whatsapp-ai" onClick={() => setMobileMenuOpen(false)}>
-            whatsapp
-          </a>
-          <a href="#crm-integration" onClick={() => setMobileMenuOpen(false)}>
-            crm
-          </a>
-          <a href="#job-apply-agent" onClick={() => setMobileMenuOpen(false)}>
-            job agent
+          <a href="#integrations" onClick={() => setMobileMenuOpen(false)}>
+            Integrations
           </a>
           <a
             href="#cta"
             className="mobile-cta"
             onClick={() => setMobileMenuOpen(false)}
           >
-            start a project →
+            Start a project <span aria-hidden="true">↗</span>
           </a>
-        </div>
+        </nav>
       )}
     </header>
   );

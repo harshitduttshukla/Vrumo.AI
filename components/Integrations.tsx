@@ -1,24 +1,35 @@
 import React from 'react';
 
+const integrations = [
+  { mark: 'W', name: 'WhatsApp', tone: 'green' },
+  { mark: 'H', name: 'HubSpot', tone: 'orange' },
+  { mark: 'S', name: 'Salesforce', tone: 'blue' },
+  { mark: 'T', name: 'Twilio', tone: 'red' },
+  { mark: 'G', name: 'Google Calendar', tone: 'google' },
+  { mark: 'S', name: 'Slack', tone: 'violet' },
+  { mark: '{ }', name: 'REST API', tone: 'neutral' },
+  { mark: 'P', name: 'PostgreSQL', tone: 'indigo' },
+];
+
 export function Integrations() {
   return (
-    <section className="section">
+    <section className="section integrations-section" id="integrations">
       <div className="wrap">
-        <div className="section-head" style={{ marginBottom: '36px' }}>
-          <div className="eyebrow">Integrations</div>
-          <h2 style={{ fontSize: '26px' }}>
-            Works with the tools you already use.
-          </h2>
+        <div className="integrations-intro">
+          <div>
+            <div className="eyebrow">Integrations</div>
+            <h2>Your tools, finally working as one.</h2>
+          </div>
+          <p>Connect the systems your team already relies on. If it has an API, we can usually make it part of the workflow.</p>
         </div>
-        <div className="pills">
-          <span className="pill">CRM Systems</span>
-          <span className="pill">WhatsApp Business API</span>
-          <span className="pill">Telephony &amp; SIP</span>
-          <span className="pill">REST APIs</span>
-          <span className="pill">Webhooks</span>
-          <span className="pill">Databases</span>
-          <span className="pill">Calendars</span>
-          <span className="pill">Internal Tools</span>
+        <div className="integration-grid">
+          {integrations.map((integration) => (
+            <div className="integration-item" key={integration.name}>
+              <span className={`integration-mark ${integration.tone}`}>{integration.mark}</span>
+              <strong>{integration.name}</strong>
+              <span className="integration-link" aria-hidden="true">↗</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -17,9 +17,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'VrumoAI — AI agents that actually do the work',
+  title: 'VrumoAI — AI agents for real work',
   description:
-    'VrumoAI builds intelligent agents that handle customer conversations, connect to your CRM, and carry out the repetitive workflows your team doesn\'t have time for.',
+    'Custom AI agents that talk to customers, update your tools, and carry repetitive workflows through to completion.',
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',
