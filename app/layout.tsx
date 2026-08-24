@@ -17,6 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://vrumo-ai-operations.harshitcreator687.chatgpt.site'),
   title: 'VrumoAI — Operational AI systems',
   description:
     'AI operators built around real workflows—from customer conversations to completed actions across your existing tools.',
