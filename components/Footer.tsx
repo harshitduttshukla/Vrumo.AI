@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -8,23 +7,23 @@ export function Footer() {
         <div className="footer-main">
           <div className="footer-brand">
             <a href="#top" className="logo" aria-label="VrumoAI home">
-              <Image src="/logo.png" alt="" width={30} height={30} className="logo-img" />
+              <span className="logo-mark" aria-hidden="true">V</span>
               <span>vrumo.ai</span>
             </a>
-            <p>AI agents built for real work.</p>
+            <p>Operational AI, built around the work.</p>
           </div>
           <div className="footer-cols">
             <div className="footer-col">
               <h3>Solutions</h3>
-              <a href="#calling-agent">AI Calling</a>
-              <a href="#whatsapp-ai">WhatsApp AI</a>
-              <a href="#crm-integration">CRM Integration</a>
-              <a href="#job-apply-agent">Job Apply Agent</a>
+              <a href="#calling-agent">Voice operations</a>
+              <a href="#whatsapp-ai">Messaging operations</a>
+              <a href="#crm-integration">Revenue operations</a>
+              <a href="#job-apply-agent">Custom operators</a>
             </div>
             <div className="footer-col">
               <h3>Explore</h3>
-              <a href="#process">How it works</a>
-              <a href="#integrations">Integrations</a>
+              <a href="#process">Process</a>
+              <a href="#integrations">Stack</a>
               <a href="#cta">Start a project</a>
             </div>
             <div className="footer-col">
@@ -35,7 +34,7 @@ export function Footer() {
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} VrumoAI</span>
-          <span>Built for useful intelligence.</span>
+          <span className="mono">INDIA / WORLDWIDE</span>
         </div>
       </div>
     </footer>

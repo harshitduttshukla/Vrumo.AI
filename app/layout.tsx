@@ -17,9 +17,20 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'VrumoAI — AI agents for real work',
+  title: 'VrumoAI — Operational AI systems',
   description:
-    'Custom AI agents that talk to customers, update your tools, and carry repetitive workflows through to completion.',
+    'AI operators built around real workflows—from customer conversations to completed actions across your existing tools.',
+  openGraph: {
+    title: 'Make work move. — VrumoAI',
+    description: 'AI operators built around real workflows.',
+    images: [{ url: '/og.png', width: 1536, height: 1024, alt: 'VrumoAI — Make work move.' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Make work move. — VrumoAI',
+    description: 'AI operators built around real workflows.',
+    images: ['/og.png'],
+  },
   icons: {
     icon: '/logo.png',
     apple: '/logo.png',

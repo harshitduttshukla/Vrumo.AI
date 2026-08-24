@@ -4,14 +4,13 @@ export function Manifesto() {
   return (
     <section className="manifesto-section">
       <div className="wrap manifesto-grid">
-        <div className="manifesto-mark" aria-hidden="true">✦</div>
+        <div className="manifesto-label mono">OUR POSITION / 01</div>
         <blockquote>
-          “The best AI should feel less like another tool to manage—and more like a capable teammate that quietly gets the work done.”
+          Useful AI is not something<br />you talk to. It is work that<br /><em>quietly gets done.</em>
         </blockquote>
         <div className="manifesto-principles">
-          <div><span className="mono">01</span><strong>Understands</strong><small>Context, intent, and rules</small></div>
-          <div><span className="mono">02</span><strong>Decides</strong><small>The right next action</small></div>
-          <div><span className="mono">03</span><strong>Acts</strong><small>Across your real systems</small></div>
+          <p>That means understanding context, making a bounded decision, and taking the next action across the real systems where work lives.</p>
+          <span className="manifesto-signoff mono">VRUMO / OPERATING PRINCIPLE</span>
         </div>
       </div>
     </section>

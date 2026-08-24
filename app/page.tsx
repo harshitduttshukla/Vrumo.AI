@@ -10,7 +10,6 @@ import { Footer } from '@/components/Footer';
 export default function Home() {
   return (
     <>
-      <div className="site-glow" aria-hidden="true" />
       <Navbar />
       <main>
         <Hero />

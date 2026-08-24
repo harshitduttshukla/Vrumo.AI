@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -18,21 +17,14 @@ export function Navbar() {
     <header className={`nav-container ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="nav-pill">
         <a href="#top" className="logo" aria-label="VrumoAI home">
-          <Image
-            src="/logo.png"
-            alt="VrumoAI"
-            width={28}
-            height={28}
-            className="logo-img"
-            priority
-          />
+          <span className="logo-mark" aria-hidden="true">V</span>
           <span className="logo-text">vrumo.ai</span>
         </a>
 
         <nav className="nav-links">
           <a href="#solutions">Solutions</a>
-          <a href="#process">How it works</a>
-          <a href="#integrations">Integrations</a>
+          <a href="#process">Process</a>
+          <a href="#integrations">Stack</a>
           <a href="#cta" className="nav-link-cta">
             Start a project <span aria-hidden="true">↗</span>
           </a>
@@ -56,10 +48,10 @@ export function Navbar() {
             Solutions
           </a>
           <a href="#process" onClick={() => setMobileMenuOpen(false)}>
-            How it works
+            Process
           </a>
           <a href="#integrations" onClick={() => setMobileMenuOpen(false)}>
-            Integrations
+            Stack
           </a>
           <a
             href="#cta"

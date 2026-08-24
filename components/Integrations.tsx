@@ -1,34 +1,21 @@
 import React from 'react';
 
-const integrations = [
-  { mark: 'W', name: 'WhatsApp', tone: 'green' },
-  { mark: 'H', name: 'HubSpot', tone: 'orange' },
-  { mark: 'S', name: 'Salesforce', tone: 'blue' },
-  { mark: 'T', name: 'Twilio', tone: 'red' },
-  { mark: 'G', name: 'Google Calendar', tone: 'google' },
-  { mark: 'S', name: 'Slack', tone: 'violet' },
-  { mark: '{ }', name: 'REST API', tone: 'neutral' },
-  { mark: 'P', name: 'PostgreSQL', tone: 'indigo' },
-];
+const integrations = ['WhatsApp', 'HubSpot', 'Salesforce', 'Twilio', 'Google', 'Slack', 'PostgreSQL', 'Any API'];
 
 export function Integrations() {
   return (
     <section className="section integrations-section" id="integrations">
       <div className="wrap">
-        <div className="integrations-intro">
-          <div>
-            <div className="eyebrow">Integrations</div>
-            <h2>Your tools, finally working as one.</h2>
-          </div>
-          <p>Connect the systems your team already relies on. If it has an API, we can usually make it part of the workflow.</p>
+        <div className="stack-header">
+          <div className="eyebrow">Works with your stack</div>
+          <p>We fit into the operation you have. No rip-and-replace transformation project required.</p>
         </div>
-        <div className="integration-grid">
-          {integrations.map((integration) => (
-            <div className="integration-item" key={integration.name}>
-              <span className={`integration-mark ${integration.tone}`}>{integration.mark}</span>
-              <strong>{integration.name}</strong>
-              <span className="integration-link" aria-hidden="true">↗</span>
-            </div>
+        <div className="integration-rail" aria-label="Supported integrations">
+          {integrations.map((integration, index) => (
+            <React.Fragment key={integration}>
+              <strong>{integration}</strong>
+              {index < integrations.length - 1 && <i aria-hidden="true" />}
+            </React.Fragment>
           ))}
         </div>
       </div>
