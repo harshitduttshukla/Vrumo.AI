@@ -25,6 +25,7 @@ export function Navbar() {
           <a href="#solutions">Solutions</a>
           <a href="#process">Process</a>
           <a href="#integrations">Stack</a>
+          <a href="#faq">FAQ</a>
           <a href="#cta" className="nav-link-cta">
             Start a project <span aria-hidden="true">↗</span>
           </a>
@@ -52,6 +53,9 @@ export function Navbar() {
           </a>
           <a href="#integrations" onClick={() => setMobileMenuOpen(false)}>
             Stack
+          </a>
+          <a href="#faq" onClick={() => setMobileMenuOpen(false)}>
+            FAQ
           </a>
           <a
             href="#cta"

@@ -10,20 +10,21 @@ export function Footer() {
               <span className="logo-mark" aria-hidden="true">V</span>
               <span>vrumo.ai</span>
             </a>
-            <p>Operational AI, built around the work.</p>
+            <p>Custom AI agents and workflow automation for growing teams.</p>
           </div>
           <div className="footer-cols">
             <div className="footer-col">
               <h3>Solutions</h3>
-              <a href="#calling-agent">Voice operations</a>
-              <a href="#whatsapp-ai">Messaging operations</a>
-              <a href="#crm-integration">Revenue operations</a>
-              <a href="#job-apply-agent">Custom operators</a>
+              <a href="#calling-agent">AI calling agents</a>
+              <a href="#whatsapp-ai">WhatsApp AI automation</a>
+              <a href="#crm-integration">AI CRM integration</a>
+              <a href="#job-apply-agent">Job application automation</a>
             </div>
             <div className="footer-col">
               <h3>Explore</h3>
               <a href="#process">Process</a>
               <a href="#integrations">Stack</a>
+              <a href="#faq">AI automation FAQ</a>
               <a href="#cta">Start a project</a>
             </div>
             <div className="footer-col">

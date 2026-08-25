@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Manrope, JetBrains_Mono } from 'next/font/google';
+import { siteConfig } from '@/lib/site';
 import './globals.css';
 
 const manrope = Manrope({
@@ -17,20 +18,52 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vrumo-ai-operations.harshitcreator687.chatgpt.site'),
-  title: 'VrumoAI — Operational AI systems',
-  description:
-    'AI operators built around real workflows—from customer conversations to completed actions across your existing tools.',
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.title,
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: 'technology',
+  keywords: [
+    'AI automation agency',
+    'AI agent development company',
+    'custom AI agents',
+    'AI workflow automation',
+    'AI calling agent',
+    'WhatsApp AI automation',
+    'AI CRM integration',
+    'job application automation',
+  ],
+  alternates: {
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   openGraph: {
-    title: 'Make work move. — VrumoAI',
-    description: 'AI operators built around real workflows.',
-    images: [{ url: '/og.png', width: 1536, height: 1024, alt: 'VrumoAI — Make work move.' }],
+    type: 'website',
+    locale: 'en_US',
+    url: '/',
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [{ url: '/vrumo-ai-automation-agency.jpg', width: 1729, height: 910, alt: 'VrumoAI — Make work move.' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Make work move. — VrumoAI',
-    description: 'AI operators built around real workflows.',
-    images: ['/og.png'],
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: ['/vrumo-ai-automation-agency.jpg'],
   },
   icons: {
     icon: '/logo.png',

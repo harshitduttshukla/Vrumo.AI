@@ -1,5 +1,5 @@
 import React from 'react';
-import { OrbitalSculpture } from './OrbitalSculpture';
+import { OrbitalSculptureLoader } from './OrbitalSculptureLoader';
 
 export function Hero() {
   return (
@@ -7,17 +7,19 @@ export function Hero() {
       <div className="hero-rule" aria-hidden="true" />
       <div className="wrap hero-grid">
         <div className="hero-copy">
-          <div className="hero-kicker mono">AI systems studio · India / Worldwide</div>
+          <div className="hero-kicker mono">Make work move · Without the busywork</div>
           <h1>
-            Make work move.<br /><span>Without the busywork.</span>
+            Custom AI agents that<br /><span>automate business workflows.</span>
           </h1>
           <p className="lead">
-            We design AI operators that handle conversations, decisions, and
-            follow-through across the tools your team already uses.
+            VrumoAI is an AI automation agency for growing teams. We build
+            custom agents that understand customer intent, handle conversations,
+            qualify leads, book appointments, update CRMs, and complete
+            multi-step work across your existing tools.
           </p>
           <div className="hero-ctas">
             <a className="btn btn-primary" href="#cta">
-              Discuss a workflow <span aria-hidden="true">↗</span>
+              Build your AI agent <span aria-hidden="true">↗</span>
             </a>
             <a className="text-link" href="#solutions">
               See what we build <span aria-hidden="true">↓</span>
@@ -29,7 +31,7 @@ export function Hero() {
             <div><span className="mono">03</span><p>Measured by<br />work completed</p></div>
           </div>
         </div>
-        <OrbitalSculpture />
+        <OrbitalSculptureLoader />
       </div>
       <a className="scroll-cue mono" href="#solutions">SCROLL TO EXPLORE <span>↓</span></a>
     </section>

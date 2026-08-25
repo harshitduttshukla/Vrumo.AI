@@ -4,34 +4,42 @@ const systems = [
   {
     number: '01',
     id: 'calling-agent',
-    title: 'Voice operations',
-    text: 'Natural inbound and outbound calls that qualify, answer, schedule, and move the work forward.',
+    title: 'AI calling agent',
+    text: 'Custom AI voice agents for inbound and outbound calls. They can answer common questions, understand customer intent, qualify leads, book appointments, schedule demos, send follow-ups, and update CRM records after each conversation.',
     result: 'Conversation → action',
-    tags: ['Lead qualification', 'Appointment booking', 'Follow-up'],
+    tags: ['Inbound & outbound calls', 'Lead qualification', 'Demo scheduling', 'CRM updates'],
+    cta: 'Discuss an AI calling agent',
+    subject: 'AI calling agent project',
   },
   {
     number: '02',
     id: 'whatsapp-ai',
-    title: 'Messaging operations',
-    text: 'A responsive sales and service layer for WhatsApp that knows the customer and the next best step.',
+    title: 'WhatsApp AI automation',
+    text: 'A WhatsApp AI assistant for repetitive sales and support conversations. It can answer customer questions, qualify leads, check availability, book appointments, send follow-ups, and connect each conversation to your CRM.',
     result: 'Message → resolution',
-    tags: ['Sales', 'Support', 'Customer updates'],
+    tags: ['Customer questions', 'Appointment booking', 'Sales & support', 'CRM-connected chat'],
+    cta: 'Plan WhatsApp automation',
+    subject: 'WhatsApp AI automation project',
   },
   {
     number: '03',
     id: 'crm-integration',
-    title: 'Revenue operations',
-    text: 'Agents that keep lead records, tasks, notes, and handoffs accurate without waiting on manual entry.',
+    title: 'AI CRM integration',
+    text: 'CRM automation with AI keeps customer information current without manual entry. Agents can create leads, update contacts and stages, record conversations, create tasks, trigger follow-ups, and synchronize data across connected systems.',
     result: 'Signal → clean CRM',
-    tags: ['CRM hygiene', 'Lead routing', 'Pipeline actions'],
+    tags: ['Contact updates', 'Lead stages', 'Tasks & follow-ups', 'Data synchronization'],
+    cta: 'Automate your CRM workflow',
+    subject: 'AI CRM integration project',
   },
   {
     number: '04',
     id: 'job-apply-agent',
-    title: 'Custom operators',
-    text: 'Purpose-built systems for the high-volume process unique to your team—from research to applications.',
+    title: 'AI job application agent',
+    text: 'Job application automation for discovering relevant roles, matching them to a candidate profile, scoring fit, preparing tailored application material, tracking submissions, and maintaining application status. It supports the process without promising employment outcomes.',
     result: 'Workflow → operator',
-    tags: ['Research', 'Back office', 'Custom systems'],
+    tags: ['Job discovery', 'Fit scoring', 'Tailored applications', 'Status tracking'],
+    cta: 'Discuss application automation',
+    subject: 'AI job application agent project',
   },
 ];
 
@@ -42,8 +50,8 @@ export function Solutions() {
         <div className="section-intro">
           <div className="eyebrow">Selected systems</div>
           <div className="section-title-group">
-            <h2>Systems that finish<br />the job.</h2>
-            <p>Not another chat window. We build operators around a clear business outcome, then connect every action required to reach it.</p>
+            <h2>AI automation services<br />built around outcomes.</h2>
+            <p>Each system is designed for a real job: communicating with customers, moving data, coordinating tools, and completing the next approved action.</p>
           </div>
         </div>
         <div className="systems-list">
@@ -53,6 +61,9 @@ export function Solutions() {
               <div className="system-name">
                 <h3>{system.title}</h3>
                 <span className="system-result mono">{system.result}</span>
+                <a className="system-cta" href={`mailto:hello@vrumoai.com?subject=${encodeURIComponent(system.subject)}`}>
+                  {system.cta} <span aria-hidden="true">↗</span>
+                </a>
               </div>
               <p>{system.text}</p>
               <ul>

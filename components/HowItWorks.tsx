@@ -4,19 +4,19 @@ const steps = [
   {
     number: '01',
     title: 'Find the leverage',
-    text: 'We study the workflow, its edge cases, and the business result worth improving.',
+    text: 'We map the current process, customer intent, business rules, edge cases, tools, permissions, and the outcome worth improving.',
     detail: 'DISCOVER / DESIGN',
   },
   {
     number: '02',
     title: 'Build the operator',
-    text: 'We combine models, company knowledge, integrations, and guardrails into one reliable system.',
+    text: 'We connect the right models, company knowledge, APIs, databases, and guardrails into a reliable multi-step workflow.',
     detail: 'BUILD / INTEGRATE',
   },
   {
     number: '03',
     title: 'Prove it in the work',
-    text: 'We launch with clear visibility, measure completed work, and improve from real use.',
+    text: 'We test real scenarios, launch with clear visibility, measure completed work, and improve the agent from actual use.',
     detail: 'LAUNCH / IMPROVE',
   },
 ];
@@ -29,7 +29,7 @@ export function HowItWorks() {
           <div className="eyebrow">The approach</div>
           <div className="section-title-group">
             <h2>Built from the work<br />backwards.</h2>
-            <p>No templated chatbot. Every engagement starts with the job, the decision points, and the systems already in place.</p>
+            <p>Custom AI agent development starts with the work itself: the trigger, decision points, required actions, exceptions, and systems already in place.</p>
           </div>
         </div>
         <div className="process-grid">

@@ -1,14 +1,17 @@
 import React from 'react';
 
-const integrations = ['WhatsApp', 'HubSpot', 'Salesforce', 'Twilio', 'Google', 'Slack', 'PostgreSQL', 'Any API'];
+const integrations = ['WhatsApp', 'HubSpot', 'Salesforce', 'Twilio', 'Google Calendar', 'Slack', 'PostgreSQL', 'REST APIs'];
 
 export function Integrations() {
   return (
     <section className="section integrations-section" id="integrations">
       <div className="wrap">
         <div className="stack-header">
-          <div className="eyebrow">Works with your stack</div>
-          <p>We fit into the operation you have. No rip-and-replace transformation project required.</p>
+          <div>
+            <div className="eyebrow">Works with your stack</div>
+            <h2>AI agents that connect<br />your business systems.</h2>
+          </div>
+          <p>VrumoAI integrates agents with the tools your team already uses so conversations, calendars, CRM records, databases, and follow-ups stay in sync. If a system provides a suitable API, it can usually become part of the workflow.</p>
         </div>
         <div className="integration-rail" aria-label="Supported integrations">
           {integrations.map((integration, index) => (

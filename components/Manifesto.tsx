@@ -2,9 +2,9 @@ import React from 'react';
 
 export function Manifesto() {
   return (
-    <section className="manifesto-section">
+    <section className="manifesto-section" aria-labelledby="operating-principle">
       <div className="wrap manifesto-grid">
-        <div className="manifesto-label mono">OUR POSITION / 01</div>
+        <h2 className="manifesto-label mono" id="operating-principle">WHAT USEFUL AI MEANS / 01</h2>
         <blockquote>
           Useful AI is not something<br />you talk to. It is work that<br /><em>quietly gets done.</em>
         </blockquote>
