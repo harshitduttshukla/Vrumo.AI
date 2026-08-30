@@ -1,13 +1,7 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { Solutions } from '@/components/Solutions';
-import { HowItWorks } from '@/components/HowItWorks';
-import { Integrations } from '@/components/Integrations';
-import { Manifesto } from '@/components/Manifesto';
-import { CTASection } from '@/components/CTASection';
+import { ProblemSection, PlatformSection, CallingSection, CRMSection, AutomationSection, UseCasesSection, HowItWorksSection, IntegrationsAndImpact, IndustriesSection, FAQSection, FinalCTA } from '@/components/HomeSections';
 import { Footer } from '@/components/Footer';
-import { Definitions } from '@/components/Definitions';
-import { FAQ } from '@/components/FAQ';
 import { StructuredData } from '@/components/StructuredData';
 
 export default function Home() {
@@ -17,13 +11,17 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Definitions />
-        <Solutions />
-        <HowItWorks />
-        <Integrations />
-        <Manifesto />
-        <FAQ />
-        <CTASection />
+        <ProblemSection />
+        <PlatformSection />
+        <CallingSection />
+        <CRMSection />
+        <AutomationSection />
+        <UseCasesSection />
+        <HowItWorksSection />
+        <IntegrationsAndImpact />
+        <IndustriesSection />
+        <FAQSection />
+        <FinalCTA />
       </main>
       <Footer />
     </>
