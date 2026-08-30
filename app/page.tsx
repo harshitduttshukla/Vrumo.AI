@@ -1,6 +1,6 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { ProblemSection, PlatformSection, CallingSection, CRMSection, AutomationSection, UseCasesSection, HowItWorksSection, IntegrationsAndImpact, IndustriesSection, FAQSection, FinalCTA } from '@/components/HomeSections';
+import { ProblemSection, PlatformSection, CallingSection, CRMSection, AutomationSection, UseCasesSection, HowItWorksSection, IntegrationsAndImpact, IndustriesSection, ContactTeamSection, FAQSection, FinalCTA } from '@/components/HomeSections';
 import { Footer } from '@/components/Footer';
 import { StructuredData } from '@/components/StructuredData';
 
@@ -20,6 +20,7 @@ export default function Home() {
         <HowItWorksSection />
         <IntegrationsAndImpact />
         <IndustriesSection />
+        <ContactTeamSection />
         <FAQSection />
         <FinalCTA />
       </main>

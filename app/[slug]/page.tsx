@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { seoPages, seoPageMap } from '@/lib/seoPages';
@@ -19,22 +20,214 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: page.title,
     description: page.description,
+    keywords: [
+      page.targetKeyword,
+      'real estate CRM',
+      'AI CRM for real estate',
+      'real estate lead management',
+      'real estate sales automation',
+      'WhatsApp automation real estate',
+    ],
     alternates: { canonical },
-    openGraph: { type: 'website', url: canonical, title: page.title, description: page.description, images: [{ url: '/og.png', width: 1536, height: 1024, alt: `${page.h1} — Vrumo AI` }] },
-    twitter: { card: 'summary_large_image', title: page.title, description: page.description, images: ['/og.png'] },
+    openGraph: {
+      type: 'website',
+      url: canonical,
+      title: page.title,
+      description: page.description,
+      images: [{ url: '/og.png', width: 1536, height: 1024, alt: `${page.h1} — Vrumo AI` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: page.title,
+      description: page.description,
+      images: ['/og.png'],
+    },
   };
 }
 
-function ProductPanel({ label, title, steps }: { label: string; title: string; steps: string[] }) {
+function ProductPanel({
+  slug,
+  label,
+  title,
+  steps,
+}: {
+  slug: string;
+  label: string;
+  title: string;
+  steps: string[];
+}) {
+  // WhatsApp simulation panel
+  if (slug === 'real-estate-whatsapp-automation') {
+    return (
+      <div className="seo-product-panel whatsapp-theme-panel" aria-label={`Vrumo WhatsApp simulation for ${title}`}>
+        <div className="seo-panel-bar">
+          <div>
+            <span className="wa-logo-icon">W</span>
+            <b>Vrumo WhatsApp Assistant</b>
+          </div>
+          <small>
+            VERIFIED WABA <i className="live-dot" />
+          </small>
+        </div>
+        <div className="seo-panel-content">
+          <div className="chat-simulation-container">
+            <div className="chat-bubble incoming">
+              <span className="chat-sender">Rahul Sharma</span>
+              <p>Hi, I saw your ad for Godrej Palm Retreat. Is the 3 BHK layout available?</p>
+              <time>10:42 AM</time>
+            </div>
+            <div className="chat-bubble outgoing">
+              <span className="chat-sender">Vrumo Assistant</span>
+              <p>
+                Hello Rahul! Yes, we have 3 BHK luxury residences (1,850 sq.ft) starting at ₹1.45 Cr in Sector 150.
+                Here is the verified e-brochure and floor plan layout:
+              </p>
+              <div className="chat-attachment-pill">📄 Godrej_Palm_3BHK_Brochure.pdf (4.2 MB)</div>
+              <time>10:42 AM ✓✓</time>
+            </div>
+            <div className="chat-bubble incoming">
+              <p>Looks great. Can I visit this Saturday around 11:30 AM?</p>
+              <time>10:43 AM</time>
+            </div>
+            <div className="chat-bubble outgoing">
+              <p>
+                ✓ Slot confirmed for Sat, 11:30 AM! Your host <b>Amit Kapoor (Senior Sales Advisor)</b> will meet you at
+                the Experience Lounge.
+              </p>
+              <div className="chat-map-pin">📍 Location Pin & VIP Entry Pass Dispatched</div>
+              <time>10:43 AM ✓✓</time>
+            </div>
+          </div>
+          <div className="panel-status-bar">
+            <span>● CRM Stage: Site Visit Confirmed</span>
+            <span>Intent: 94% High</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // AI Calling simulation panel
+  if (slug === 'real-estate-ai-calling') {
+    return (
+      <div className="seo-product-panel calling-theme-panel" aria-label={`Vrumo AI Voice Agent for ${title}`}>
+        <div className="seo-panel-bar">
+          <div>
+            <span>V</span>
+            <b>Vrumo Voice Agent</b>
+          </div>
+          <small>
+            CALL ACTIVE <i className="live-dot" />
+          </small>
+        </div>
+        <div className="seo-panel-content">
+          <div className="call-header-box">
+            <div className="caller-info">
+              <span className="lead-avatar lead-avatar-large">RS</span>
+              <div>
+                <small>INBOUND AD CALL</small>
+                <h3>Rahul Sharma</h3>
+                <span>DLF Privana Campaign</span>
+              </div>
+            </div>
+            <div className="call-timer-badge">00:48</div>
+          </div>
+
+          <div className="voice-wave-large">
+            {[20, 38, 16, 52, 28, 60, 22, 44, 68, 30, 48, 18, 56, 32, 50, 24, 42, 16, 34, 22, 54, 28, 44, 20].map(
+              (h, i) => (
+                <i key={i} style={{ height: `${h}px` }} />
+              )
+            )}
+          </div>
+
+          <div className="realtime-transcription-box">
+            <small>LIVE EXTRACTION</small>
+            <p>
+              <b>AI:</b> &quot;...Understood, ₹1.5 Cr budget with 3 BHK configuration. Let me reserve a VIP tour for this
+              Sunday...&quot;
+            </p>
+          </div>
+
+          <div className="call-tags-row">
+            <span>✓ Budget: ₹1.5 Cr</span>
+            <span>✓ 3 BHK Gurugram</span>
+            <span>✓ Pre-Approved HDFC</span>
+            <span>✓ Visit: Sun 4 PM</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Default / CRM / Developer / Pipeline Panel
   return (
     <div className="seo-product-panel" aria-label={`Vrumo product interface showing ${title}`}>
-      <div className="seo-panel-bar"><div><span>V</span><b>Vrumo CRM</b></div><small>LIVE WORKFLOW <i /></small></div>
+      <div className="seo-panel-bar">
+        <div>
+          <span>V</span>
+          <b>Vrumo CRM & Workflows</b>
+        </div>
+        <small>
+          LIVE WORKFLOW <i className="live-dot" />
+        </small>
+      </div>
       <div className="seo-panel-content">
-        <div className="seo-panel-title"><div><small>{label}</small><h2>{title}</h2></div><span>AI ACTIVE</span></div>
-        <div className="seo-lead-summary"><span>RS</span><div><small>LEAD</small><b>Rahul Sharma</b></div><div><small>REQUIREMENT</small><b>3 BHK · Gurgaon</b></div><div><small>BUDGET</small><b>₹1.2 Cr</b></div><em>92%</em></div>
+        <div className="seo-panel-title">
+          <div>
+            <small>{label}</small>
+            <h2>{title}</h2>
+          </div>
+          <span className="active-tag">AI ACTIVE</span>
+        </div>
+        <div className="seo-lead-summary">
+          <span className="lead-avatar">RS</span>
+          <div>
+            <small>LEAD</small>
+            <b>Rahul Sharma</b>
+          </div>
+          <div>
+            <small>REQUIREMENT</small>
+            <b>3 BHK · Gurgaon</b>
+          </div>
+          <div>
+            <small>BUDGET</small>
+            <b>₹1.2 Cr – ₹1.5 Cr</b>
+          </div>
+          <em className="score-badge">92% Intent</em>
+        </div>
         <div className="seo-activity-grid">
-          <div className="seo-step-list">{steps.map((step, index) => <div key={step} className={index < 3 ? 'is-done' : ''}><span>{index < 3 ? '✓' : String(index + 1).padStart(2, '0')}</span><b>{step}</b><small>{index < 3 ? 'Complete' : index === 3 ? 'In progress' : 'Queued'}</small></div>)}</div>
-          <div className="seo-insight"><small>AI QUALIFICATION</small><div><span>Intent score</span><b>92%</b></div><i><em /></i><ul><li>✓ Budget identified</li><li>✓ Location matched</li><li>✓ Timeline: 0–30 days</li></ul><button type="button">Open lead record ↗</button></div>
+          <div className="seo-step-list">
+            {steps.map((step, index) => (
+              <div key={step} className={index < 3 ? 'is-done' : ''}>
+                <span>{index < 3 ? '✓' : String(index + 1).padStart(2, '0')}</span>
+                <b>{step}</b>
+                <small>{index < 3 ? 'Complete' : index === 3 ? 'In progress' : 'Queued'}</small>
+              </div>
+            ))}
+          </div>
+          <div className="seo-insight">
+            <small>AI QUALIFICATION REPORT</small>
+            <div>
+              <span>Intent Score</span>
+              <b>92% High</b>
+            </div>
+            <i>
+              <em />
+            </i>
+            <ul>
+              <li>✓ Budget verified with inventory</li>
+              <li>✓ Location: Sector 65, Gurgaon</li>
+              <li>✓ Timeline: Ready to visit Sat</li>
+              <li>✓ Financing: Pre-approved bank loan</li>
+            </ul>
+            <Link
+              href="/contact"
+              className="panel-cta-btn"
+            >
+              Open Lead Record ↗
+            </Link>
+          </div>
         </div>
       </div>
     </div>
@@ -45,7 +238,8 @@ export default async function SeoLandingPage({ params }: Props) {
   const { slug } = await params;
   const page = seoPageMap.get(slug);
   if (!page) notFound();
-  const breadcrumb = {
+
+  const breadcrumbsSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -54,31 +248,236 @@ export default async function SeoLandingPage({ params }: Props) {
     ],
   };
 
+  const softwareAppSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: `Vrumo AI - ${page.eyebrow}`,
+    applicationCategory: 'BusinessApplication',
+    applicationSubCategory: 'Real Estate CRM and Sales Automation',
+    operatingSystem: 'Web, Cloud',
+    description: page.description,
+    url: `${siteConfig.url}/${page.slug}`,
+    publisher: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: `${siteConfig.url}/logo.png`,
+    },
+    featureList: page.workflow,
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: page.faqs.map(([q, a]) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: a,
+      },
+    })),
+  };
+
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb).replace(/</g, '\u003c') }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema).replace(/</g, '\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema).replace(/</g, '\u003c') }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, '\u003c') }}
+      />
+
       <Navbar />
+
       <main className="seo-page">
+        {/* Hero Section */}
         <section className="seo-hero">
           <div className="hero-gridlines" aria-hidden="true" />
           <div className="wrap seo-hero-inner">
-            <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Vrumo AI</a><span>→</span><span>{page.eyebrow}</span></nav>
-            <div className="seo-hero-copy"><div><span className="hero-eyebrow"><i className="live-dot" />{page.eyebrow}</span><h1>{page.h1}</h1><p>{page.intro}</p><div className="hero-actions"><a className="button button-primary" href="mailto:hello@vrumoai.com?subject=Book%20a%20Vrumo%20demo">Book a Demo <span>↗</span></a><a className="button button-quiet" href="#capabilities">Explore capabilities <span>↓</span></a></div></div><ProductPanel label={page.visualLabel} title={page.visualTitle} steps={page.workflow} /></div>
+            <nav className="breadcrumbs" aria-label="Breadcrumb">
+              <Link href="/">Vrumo AI</Link>
+              <span>→</span>
+              <span>{page.eyebrow}</span>
+            </nav>
+            <div className="seo-hero-copy">
+              <div>
+                <span className="hero-eyebrow">
+                  <i className="live-dot" />
+                  {page.eyebrow}
+                </span>
+                <h1>{page.h1}</h1>
+                <p>{page.intro}</p>
+                <div className="hero-actions">
+                  <Link className="button button-primary" href="/contact">
+                    Book a Demo <span>↗</span>
+                  </Link>
+                  <a className="button button-quiet" href="#capabilities">
+                    Explore Capabilities <span>↓</span>
+                  </a>
+                </div>
+                <div className="seo-hero-badges">
+                  <span>✓ 60-Second Lead Response</span>
+                  <span>✓ Official WhatsApp API</span>
+                  <span>✓ AI Voice & Telephony</span>
+                </div>
+              </div>
+              <ProductPanel slug={page.slug} label={page.visualLabel} title={page.visualTitle} steps={page.workflow} />
+            </div>
           </div>
         </section>
 
-        <section className="seo-pains" id="capabilities"><div className="wrap"><div className="seo-section-heading"><span className="section-kicker">WHY THIS WORKFLOW MATTERS</span><h2>Fix the Gaps That Slow Property Sales Down.</h2></div><div className="seo-three-grid">{page.pains.map(([title, text], index) => <article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
+        {/* Pains & Core Challenges */}
+        <section className="seo-pains" id="capabilities">
+          <div className="wrap">
+            <div className="seo-section-heading">
+              <span className="section-kicker">WHY THIS WORKFLOW MATTERS</span>
+              <h2>Fix the Operational Gaps That Slow Property Sales Down.</h2>
+              <p>Traditional real estate sales operations leak high-value leads at every handoff. Vrumo eliminates the delay.</p>
+            </div>
+            <div className="seo-three-grid">
+              {page.pains.map(([title, text], index) => (
+                <article key={title}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        <section className="seo-outcomes"><div className="wrap seo-outcomes-layout"><div><span className="section-kicker">BUILT AROUND REAL ESTATE</span><h2>Give Every Lead a Clear Next Action.</h2><p>Vrumo keeps the requirement, interaction history, automation activity and sales handoff connected to the opportunity.</p><a href="mailto:hello@vrumoai.com?subject=Discuss%20a%20Vrumo%20workflow">Discuss your workflow ↗</a></div><div className="seo-outcome-list">{page.outcomes.map(([title, text], index) => <article key={title}><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></div></section>
+        {/* Outcomes & Architecture */}
+        <section className="seo-outcomes">
+          <div className="wrap seo-outcomes-layout">
+            <div>
+              <span className="section-kicker">BUILT AROUND REAL ESTATE</span>
+              <h2>Give Every Lead a Clear Next Action.</h2>
+              <p>
+                Vrumo keeps buyer requirements, WhatsApp chat histories, voice call summaries, and site visit schedules attached to the opportunity record.
+              </p>
+              <Link className="button button-quiet" href="/contact">
+                Discuss Your Workflow ↗
+              </Link>
+            </div>
+            <div className="seo-outcome-list">
+              {page.outcomes.map(([title, text], index) => (
+                <article key={title}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        <section className="seo-workflow"><div className="wrap"><div className="seo-section-heading centered-heading"><span className="section-kicker">CONNECTED WORKFLOW</span><h2>From First Signal to Sales Handoff.</h2></div><div className="seo-flow">{page.workflow.map((step, index) => <div key={step}><span>{String(index + 1).padStart(2, '0')}</span><b>{step}</b>{index < page.workflow.length - 1 && <i>→</i>}</div>)}</div><p>Workflow steps are configured around your systems, permissions, business rules and human approval points.</p></div></section>
+        {/* Connected Step-by-Step Flow */}
+        <section className="seo-workflow">
+          <div className="wrap">
+            <div className="seo-section-heading centered-heading">
+              <span className="section-kicker">CONNECTED WORKFLOW</span>
+              <h2>From First Ad Signal to Closed Site Visit.</h2>
+              <p>Every step executes on time-and-event triggers tailored to your sales playbook.</p>
+            </div>
+            <div className="seo-flow">
+              {page.workflow.map((step, index) => (
+                <div key={step}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <b>{step}</b>
+                  {index < page.workflow.length - 1 && <i>→</i>}
+                </div>
+              ))}
+            </div>
+            <p className="workflow-disclaimer">
+              Workflow triggers are configured around your telephony lines, WhatsApp templates, business rules, and sales manager approval thresholds.
+            </p>
+          </div>
+        </section>
 
-        <section className="seo-faq"><div className="wrap seo-faq-layout"><div><span className="section-kicker">QUESTIONS</span><h2>What Teams Usually Ask.</h2></div><div>{page.faqs.map(([question, answer], index) => <details key={question} open={index === 0}><summary>{question}<span>＋</span></summary><p>{answer}</p></details>)}</div></div></section>
+        {/* FAQ Accordion */}
+        <section className="seo-faq">
+          <div className="wrap seo-faq-layout">
+            <div>
+              <span className="section-kicker">QUESTIONS & ANSWERS</span>
+              <h2>Frequently Asked Questions.</h2>
+              <p>Practical answers regarding setup, integrations, and workflow capabilities.</p>
+              <Link href="/contact" className="faq-ask-link">
+                Ask a specific question ↗
+              </Link>
+            </div>
+            <div className="faq-items-wrapper">
+              {page.faqs.map(([question, answer], index) => (
+                <details key={question} open={index === 0}>
+                  <summary>
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                    <strong>{question}</strong>
+                    <i>＋</i>
+                  </summary>
+                  <p>{answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
 
-        <section className="seo-related"><div className="wrap"><span className="section-kicker">KEEP EXPLORING</span><h2>Build the Full Real Estate Lead Journey.</h2><div>{page.related.map((relatedSlug) => { const related = seoPageMap.get(relatedSlug)!; return <a href={`/${related.slug}`} key={related.slug}><span>{related.eyebrow}</span><h3>{related.h1}</h3><b>Explore ↗</b></a>; })}</div></div></section>
+        {/* Related Solutions & Internal Linking */}
+        <section className="seo-related">
+          <div className="wrap">
+            <span className="section-kicker">KEEP EXPLORING</span>
+            <h2>Build the Full Real Estate Sales Ecosystem.</h2>
+            <div className="related-commercial-grid">
+              {page.related.map((relatedSlug) => {
+                const rel = seoPageMap.get(relatedSlug);
+                if (!rel) return null;
+                return (
+                  <Link href={`/${rel.slug}`} key={rel.slug} className="related-commercial-card">
+                    <span>{rel.eyebrow}</span>
+                    <h3>{rel.h1}</h3>
+                    <b>Explore Workflow ↗</b>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
 
-        <section className="seo-cta"><div className="wrap"><span className="section-kicker">START WITH THE BOTTLENECK</span><h2>Show Us Where Your Leads Get Stuck.</h2><p>We&apos;ll map the workflow and show you where Vrumo can capture context, automate the repetition and create a cleaner sales handoff.</p><a className="button button-primary" href="mailto:hello@vrumoai.com?subject=Book%20a%20Vrumo%20demo">Book a Demo <span>↗</span></a></div></section>
+        {/* Final Conversion CTA */}
+        <section className="seo-cta">
+          <div className="wrap">
+            <div className="cta-banner-card">
+              <span className="section-kicker">START WITH YOUR PRIMARY BOTTLENECK</span>
+              <h2>Show Us Where Your Property Leads Get Stuck.</h2>
+              <p>
+                We&apos;ll map your sales funnel and demonstrate where Vrumo AI can capture context, automate repetitive qualification, and deliver scheduled site visits.
+              </p>
+              <div className="cta-actions">
+                <a
+                  className="button button-primary"
+                  href="mailto:divyamanpal490@gmail.com?subject=Vrumo%20AI%20%E2%80%94%20Real%20Estate%20Automation%20Enquiry"
+                >
+                  Talk to Divyaman <span>→</span>
+                </a>
+                <a
+                  className="button button-quiet"
+                  href="mailto:harshitshukla6388@gmail.com?subject=Vrumo%20AI%20%E2%80%94%20Real%20Estate%20Automation%20Enquiry"
+                >
+                  Talk to Harshit <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
+
       <Footer />
     </>
   );

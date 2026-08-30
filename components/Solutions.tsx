@@ -61,7 +61,7 @@ export function Solutions() {
               <div className="system-name">
                 <h3>{system.title}</h3>
                 <span className="system-result mono">{system.result}</span>
-                <a className="system-cta" href={`mailto:hello@vrumoai.com?subject=${encodeURIComponent(system.subject)}`}>
+                <a className="system-cta" href={`mailto:divyamanpal490@gmail.com?subject=${encodeURIComponent(system.subject)}`}>
                   {system.cta} <span aria-hidden="true">↗</span>
                 </a>
               </div>

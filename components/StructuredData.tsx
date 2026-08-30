@@ -1,4 +1,5 @@
 import { siteConfig } from '@/lib/site';
+import { contacts } from '@/lib/contacts';
 
 export function StructuredData() {
   const organizationId = `${siteConfig.url}/#organization`;
@@ -11,10 +12,36 @@ export function StructuredData() {
         name: siteConfig.name,
         url: siteConfig.url,
         logo: `${siteConfig.url}/logo.png`,
-        email: siteConfig.email,
+        email: contacts.divyaman.email,
+        telephone: contacts.divyaman.phone,
         description: 'AI-powered CRM and automation platform built for real estate teams.',
         areaServed: 'Worldwide',
-        knowsAbout: ['Real estate CRM', 'Real estate lead management', 'AI calling', 'WhatsApp automation', 'Real estate sales automation', 'Site visit automation'],
+        knowsAbout: [
+          'Real estate CRM',
+          'Real estate lead management',
+          'AI calling',
+          'WhatsApp automation',
+          'Real estate sales automation',
+          'Site visit automation',
+        ],
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            telephone: contacts.divyaman.phone,
+            contactType: 'Sales and Partnerships',
+            email: contacts.divyaman.email,
+            name: contacts.divyaman.name,
+            availableLanguage: ['English', 'Hindi'],
+          },
+          {
+            '@type': 'ContactPoint',
+            telephone: contacts.harshit.phone,
+            contactType: 'Product and Technology',
+            email: contacts.harshit.email,
+            name: contacts.harshit.name,
+            availableLanguage: ['English', 'Hindi'],
+          },
+        ],
       },
       {
         '@type': 'WebSite',
@@ -35,7 +62,15 @@ export function StructuredData() {
         description: siteConfig.description,
         url: siteConfig.url,
         provider: { '@id': organizationId },
-        featureList: ['Real estate lead capture', 'AI lead qualification', 'WhatsApp workflow automation', 'AI calling workflows', 'Real estate CRM pipeline', 'Follow-up automation', 'Site visit coordination'],
+        featureList: [
+          'Real estate lead capture',
+          'AI lead qualification',
+          'WhatsApp workflow automation',
+          'AI calling workflows',
+          'Real estate CRM pipeline',
+          'Follow-up automation',
+          'Site visit coordination',
+        ],
       },
     ],
   };
