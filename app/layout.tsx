@@ -69,6 +69,9 @@ export const metadata: Metadata = {
     icon: '/logo.png',
     apple: '/logo.png',
   },
+  verification: {
+    google: 'google-site-verification=Q5C3D_78hTzqE2AX9p8-qXLFBWQhJGt9Rk8haQFFoNk',
+  },
 };
 
 export default function RootLayout({
