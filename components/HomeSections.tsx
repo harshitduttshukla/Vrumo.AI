@@ -56,28 +56,28 @@ const modules = [
 
 const faqs = [
   [
-    'What is a real estate CRM?',
-    'A real estate CRM helps developers, brokers, consultants and sales teams organize leads, contacts, property requirements, conversations, follow-ups, site visits and opportunities in one system.',
+    'What is Vrumo AI and how does it help real estate teams?',
+    'Vrumo AI combines real estate CRM, lead qualification, calling, WhatsApp workflows and sales automation in one system. It helps teams capture enquiries, understand buyer requirements, coordinate the next action and keep the pipeline current.',
   ],
   [
-    'What is an AI CRM for real estate?',
-    'An AI CRM adds automation to the lead lifecycle. It can capture enquiries, understand requirements, qualify intent, prepare or send approved responses, trigger follow-ups and keep records current with less manual entry.',
+    'Can Vrumo AI manage leads from WhatsApp and other channels?',
+    'Yes. Vrumo can bring suitable enquiries from WhatsApp, websites, forms, campaigns, phone calls and connected systems into one lead record, subject to the access and permissions available for each source.',
   ],
   [
-    'Can Vrumo automate WhatsApp follow-ups?',
-    'Vrumo can support approved WhatsApp workflows for qualification, reminders, property information and follow-up sequences. The exact setup depends on your provider, templates, permissions and business rules.',
+    'Can I track site visits, follow-ups and lead activity?',
+    'Yes. Each lead can keep a visible history of conversations, requirements, follow-up status, site-visit details, sales ownership and the next planned action.',
   ],
   [
-    'Can Vrumo qualify real estate leads automatically?',
-    'Yes. Vrumo can gather and structure requirements such as budget, location, property type, timeline, purpose and buying intent, then use your rules to score and route the opportunity.',
+    'Can Vrumo AI automate repetitive sales workflows?',
+    'Yes. Vrumo can automate bounded steps such as lead capture, qualification, routing, approved follow-ups, reminders, notifications and CRM updates while preserving clear human handoffs.',
   ],
   [
-    'Can Vrumo schedule site visits?',
-    'Yes. Vrumo can connect qualification workflows with available calendars and business systems to offer suitable slots, confirm visits, send reminders and notify the responsible sales person.',
+    'Can the CRM integrate with our existing tools?',
+    'Vrumo can connect with suitable CRM, calendar, telephony, database and internal APIs. Feasibility depends on the tool’s available API, permissions and the workflow your team wants to automate.',
   ],
   [
-    'Can Vrumo integrate with our existing CRM?',
-    'Vrumo can connect with suitable CRM, calendar, telephony, database and internal APIs. Integration feasibility depends on the system’s API access, permissions and the workflow you want to automate.',
+    'Is Vrumo AI suitable for individual brokers and larger real estate teams?',
+    'Yes. The system can support an individual broker’s lead workflow as well as multi-project developer, agency and sales-team processes with routing, ownership and pipeline visibility.',
   ],
 ];
 
@@ -937,32 +937,65 @@ export function ContactTeamSection() {
 }
 
 export function FAQSection() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq((prev) => (prev === index ? null : index));
+  };
+
   return (
-    <section className="faq-section" id="faq">
+    <section className="faq-section" id="faq" aria-labelledby="faq-title">
       <div className="wrap faq-layout">
-        <div>
+        <div className="faq-intro">
           <span className="section-kicker">FREQUENTLY ASKED</span>
-          <h2>
-            Real Estate CRM,
+          <h2 id="faq-title">
+            Real Estate
+            <br />
+            CRM,
             <br />
             Made Clear.
           </h2>
           <p>Practical answers about the platform, integrations and what can be automated.</p>
           <Link href="/contact" className="faq-ask-link">
-            Ask a different question ↗
+            Ask a different question <span aria-hidden="true">↗</span>
           </Link>
         </div>
-        <div className="faq-list">
-          {faqs.map(([question, answer], index) => (
-            <details key={question} open={index === 0} className="faq-item">
-              <summary>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <strong>{question}</strong>
-                <i className="faq-toggle-icon">＋</i>
-              </summary>
-              <p>{answer}</p>
-            </details>
-          ))}
+        <div className="faq-list" role="region" aria-label="Frequently Asked Questions">
+          {faqs.map(([question, answer], index) => {
+            const isOpen = openFaq === index;
+            const itemNum = String(index + 1).padStart(2, '0');
+            return (
+              <article className={`home-faq-item ${isOpen ? 'is-open' : ''}`} key={question}>
+                <h3>
+                  <button
+                    type="button"
+                    className="home-faq-button"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${index}`}
+                    id={`faq-btn-${index}`}
+                    onClick={() => toggleFaq(index)}
+                  >
+                    <span className="home-faq-num">{itemNum}</span>
+                    <span className="home-faq-question">{question}</span>
+                    <span className="home-faq-toggle-wrapper">
+                      <i className="home-faq-toggle" aria-hidden="true">＋</i>
+                    </span>
+                  </button>
+                </h3>
+                <div
+                  className="home-faq-answer"
+                  id={`faq-answer-${index}`}
+                  role="region"
+                  aria-labelledby={`faq-btn-${index}`}
+                  hidden={!isOpen}
+                >
+                  <div className="home-faq-answer-inner">
+                    <p>{answer}</p>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -1000,4 +1033,3 @@ export function FinalCTA() {
     </section>
   );
 }
-

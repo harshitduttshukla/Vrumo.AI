@@ -77,155 +77,175 @@ export function Hero() {
           {/* Desktop Full CRM Stage & Mobile Focused Card */}
           <div className="crm-stage" aria-label="Interactive preview of the Vrumo real estate CRM">
             {/* Desktop Full CRM Window (hidden on mobile via CSS) */}
-            <div className="crm-window desktop-crm-view">
-              <div className="crm-topbar">
-                <div className="crm-brand">
-                  <span className="crm-brandmark">V</span>
-                  <span>Vrumo CRM</span>
+            <div className="product-frame desktop-crm-view">
+              <div className="browser-chrome" aria-hidden="true">
+                <div className="chrome-dots">
+                  <span className="dot-red" />
+                  <span className="dot-yellow" />
+                  <span className="dot-green" />
                 </div>
-                <div className="crm-top-actions">
-                  <span className="sync-status">
-                    <i /> Live sync
-                  </span>
-                  <button type="button" aria-label="Open CRM notifications">
-                    2
-                  </button>
-                  <span className="avatar">AK</span>
+                <div className="chrome-address-bar">
+                  <svg className="lock-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                  <span>app.vrumo.ai / pipeline</span>
+                </div>
+                <div className="chrome-actions">
+                  <span className="chrome-status"><span className="status-pulse" /> LIVE CRM</span>
                 </div>
               </div>
 
-              <div className="crm-shell">
-                <aside className="crm-sidebar" aria-label="CRM navigation">
-                  <span className="side-icon is-active">⌂</span>
-                  <span className="side-icon">◫</span>
-                  <span className="side-icon">↗</span>
-                  <span className="side-icon">◎</span>
-                  <span className="side-icon side-bottom">⚙</span>
-                </aside>
-
-                <div className="crm-content">
-                  <div className="crm-heading-row">
-                    <div>
-                      <span className="crm-overline">SALES PIPELINE</span>
-                      <h2>Active enquiries</h2>
-                    </div>
-                    <span className="crm-date">30 AUG 2026</span>
+              <div className="crm-window">
+                <div className="crm-topbar">
+                  <div className="crm-brand">
+                    <span className="crm-brandmark">V</span>
+                    <span>Vrumo CRM</span>
                   </div>
-
-                  <div className="metric-grid">
-                    <article>
-                      <span>NEW LEADS</span>
-                      <strong>24</strong>
-                      <small>+8 today</small>
-                    </article>
-                    <article>
-                      <span>QUALIFIED</span>
-                      <strong>18</strong>
-                      <small>Ready for sales</small>
-                    </article>
-                    <article>
-                      <span>SITE VISITS</span>
-                      <strong>07</strong>
-                      <small>This week</small>
-                    </article>
+                  <div className="crm-top-actions">
+                    <span className="sync-status">
+                      <i /> Live sync
+                    </span>
+                    <button type="button" aria-label="Open CRM notifications">
+                      2
+                    </button>
+                    <span className="avatar">AK</span>
                   </div>
+                </div>
 
-                  <div className="crm-workspace">
-                    <div className="lead-list">
-                      <div className="list-label">
-                        <span>INBOUND LEADS</span>
-                        <span>Score</span>
+                <div className="crm-shell">
+                  <aside className="crm-sidebar" aria-label="CRM navigation">
+                    <span className="side-icon is-active">⌂</span>
+                    <span className="side-icon">◫</span>
+                    <span className="side-icon">↗</span>
+                    <span className="side-icon">◎</span>
+                    <span className="side-icon side-bottom">⚙</span>
+                  </aside>
+
+                  <div className="crm-content">
+                    <div className="crm-heading-row">
+                      <div>
+                        <span className="crm-overline">SALES PIPELINE</span>
+                        <h2>Active enquiries</h2>
                       </div>
-                      {leads.map((item, index) => (
-                        <button
-                          className={`lead-row ${selectedLead === index ? 'is-selected' : ''}`}
-                          key={item.name}
-                          type="button"
-                          onClick={() => setSelectedLead(index)}
-                          aria-pressed={selectedLead === index}
-                        >
-                          <span className="lead-avatar">{item.initials}</span>
-                          <span className="lead-main">
-                            <strong>{item.name}</strong>
-                            <small>{item.property}</small>
-                          </span>
-                          <span className="lead-budget">{item.budget}</span>
-                          <span className="score-pill">{item.score}%</span>
-                        </button>
-                      ))}
-                      <div className="list-footer">
-                        <span>AI is monitoring 21 more enquiries</span>
-                        <i />
-                      </div>
+                      <span className="crm-date">30 AUG 2026</span>
                     </div>
 
-                    <article className="lead-panel" aria-live="polite">
-                      <div className="lead-panel-top">
-                        <div className="lead-identity">
-                          <span className="lead-avatar lead-avatar-large">{lead.initials}</span>
-                          <div>
-                            <small>NEW ENQUIRY</small>
-                            <h3>{lead.name}</h3>
+                    <div className="metric-grid">
+                      <article>
+                        <span>NEW LEADS</span>
+                        <strong>24</strong>
+                        <small>+8 today</small>
+                      </article>
+                      <article>
+                        <span>QUALIFIED</span>
+                        <strong>18</strong>
+                        <small>Ready for sales</small>
+                      </article>
+                      <article>
+                        <span>SITE VISITS</span>
+                        <strong>07</strong>
+                        <small>This week</small>
+                      </article>
+                    </div>
+
+                    <div className="crm-workspace">
+                      <div className="lead-list">
+                        <div className="list-label">
+                          <span>INBOUND LEADS</span>
+                          <span>Score</span>
+                        </div>
+                        {leads.map((item, index) => (
+                          <button
+                            className={`lead-row ${selectedLead === index ? 'is-selected' : ''}`}
+                            key={item.name}
+                            type="button"
+                            onClick={() => setSelectedLead(index)}
+                            aria-pressed={selectedLead === index}
+                          >
+                            <span className="lead-avatar">{item.initials}</span>
+                            <span className="lead-main">
+                              <strong>{item.name}</strong>
+                              <small>{item.property}</small>
+                            </span>
+                            <span className="lead-budget">{item.budget}</span>
+                            <span className="score-pill">{item.score}%</span>
+                          </button>
+                        ))}
+                        <div className="list-footer">
+                          <span>AI is monitoring 21 more enquiries</span>
+                          <i />
+                        </div>
+                      </div>
+
+                      <article className="lead-panel" aria-live="polite">
+                        <div className="lead-panel-top">
+                          <div className="lead-identity">
+                            <span className="lead-avatar lead-avatar-large">{lead.initials}</span>
+                            <div>
+                              <small>NEW ENQUIRY</small>
+                              <h3>{lead.name}</h3>
+                            </div>
                           </div>
+                          <span className="qualified-badge">✓ Qualified</span>
                         </div>
-                        <span className="qualified-badge">✓ Qualified</span>
-                      </div>
-                      <div className="intent-row">
-                        <div>
-                          <small>LEAD SCORE</small>
-                          <strong>{lead.score}%</strong>
+                        <div className="intent-row">
+                          <div>
+                            <small>LEAD SCORE</small>
+                            <strong>{lead.score}%</strong>
+                          </div>
+                          <div className="score-track">
+                            <i style={{ width: `${lead.score}%` }} />
+                          </div>
+                          <span>High intent</span>
                         </div>
-                        <div className="score-track">
-                          <i style={{ width: `${lead.score}%` }} />
+                        <dl className="lead-facts">
+                          <div>
+                            <dt>PROPERTY</dt>
+                            <dd>{lead.property}</dd>
+                          </div>
+                          <div>
+                            <dt>BUDGET</dt>
+                            <dd>{lead.budget}</dd>
+                          </div>
+                          <div>
+                            <dt>LOCATION</dt>
+                            <dd>{lead.location}</dd>
+                          </div>
+                          <div>
+                            <dt>SOURCE</dt>
+                            <dd>{lead.source}</dd>
+                          </div>
+                        </dl>
+                        <div className="ai-activity">
+                          <div className="activity-head">
+                            <span>
+                              <i /> AI ACTIVITY
+                            </span>
+                            <small>Just now</small>
+                          </div>
+                          <p>Requirement captured and matched to active inventory.</p>
+                          <ul>
+                            <li>
+                              <span>✓</span>
+                              <b>WhatsApp reply sent</b>
+                            </li>
+                            <li>
+                              <span>✓</span>
+                              <b>Site visit</b>
+                              <em>{lead.visit}</em>
+                            </li>
+                            <li>
+                              <span>✓</span>
+                              <b>CRM record updated</b>
+                            </li>
+                          </ul>
                         </div>
-                        <span>High intent</span>
-                      </div>
-                      <dl className="lead-facts">
-                        <div>
-                          <dt>PROPERTY</dt>
-                          <dd>{lead.property}</dd>
-                        </div>
-                        <div>
-                          <dt>BUDGET</dt>
-                          <dd>{lead.budget}</dd>
-                        </div>
-                        <div>
-                          <dt>LOCATION</dt>
-                          <dd>{lead.location}</dd>
-                        </div>
-                        <div>
-                          <dt>SOURCE</dt>
-                          <dd>{lead.source}</dd>
-                        </div>
-                      </dl>
-                      <div className="ai-activity">
-                        <div className="activity-head">
-                          <span>
-                            <i /> AI ACTIVITY
-                          </span>
-                          <small>Just now</small>
-                        </div>
-                        <p>Requirement captured and matched to active inventory.</p>
-                        <ul>
-                          <li>
-                            <span>✓</span>
-                            <b>WhatsApp reply sent</b>
-                          </li>
-                          <li>
-                            <span>✓</span>
-                            <b>Site visit</b>
-                            <em>{lead.visit}</em>
-                          </li>
-                          <li>
-                            <span>✓</span>
-                            <b>CRM record updated</b>
-                          </li>
-                        </ul>
-                      </div>
-                      <button className="panel-action" type="button">
-                        Open lead record <span>↗</span>
-                      </button>
-                    </article>
+                        <button className="panel-action" type="button">
+                          Open lead record <span>↗</span>
+                        </button>
+                      </article>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -315,14 +335,6 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="floating-alert desktop-only">
-              <span className="floating-icon">✓</span>
-              <span>
-                <small>NEXT ACTION COMPLETE</small>
-                <strong>Site visit scheduled</strong>
-              </span>
-              <time>now</time>
-            </div>
           </div>
         </div>
       </section>
