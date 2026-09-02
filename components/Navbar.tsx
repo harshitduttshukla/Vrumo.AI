@@ -78,42 +78,32 @@ export function Navbar() {
                   <Link href="/real-estate-crm" onClick={closeMenu} className="dropdown-card">
                     <span className="card-tag">CORE CRM</span>
                     <strong>Real Estate CRM</strong>
-                    <p>Pipeline, buyer records & project inventory</p>
+                    <p>Role-based dashboards, lead records & audit history</p>
                   </Link>
                   <Link href="/real-estate-lead-management" onClick={closeMenu} className="dropdown-card">
                     <span className="card-tag">QUALIFICATION</span>
                     <strong>AI Lead Management</strong>
-                    <p>Multi-attribute intent scoring & routing</p>
-                  </Link>
-                  <Link href="/real-estate-ai-calling" onClick={closeMenu} className="dropdown-card">
-                    <span className="card-tag">VOICE AI</span>
-                    <strong>AI Calling</strong>
-                    <p>Inbound qualification & missed call recovery</p>
+                    <p>WhatsApp qualification, routing & ownership</p>
                   </Link>
                   <Link href="/real-estate-whatsapp-automation" onClick={closeMenu} className="dropdown-card">
                     <span className="card-tag">MESSAGING</span>
                     <strong>WhatsApp AI</strong>
-                    <p>Brochures, chat qualification & reminders</p>
+                    <p>Chat qualification, transcripts & notifications</p>
                   </Link>
                   <Link href="/real-estate-sales-automation" onClick={closeMenu} className="dropdown-card">
                     <span className="card-tag">WORKFLOWS</span>
                     <strong>Sales Automation</strong>
-                    <p>Lead assignment to contract booking</p>
+                    <p>Lead assignment, statuses, callbacks & reporting</p>
                   </Link>
                   <Link href="/real-estate-lead-follow-up" onClick={closeMenu} className="dropdown-card">
                     <span className="card-tag">CADENCE</span>
                     <strong>Follow-Up Automation</strong>
-                    <p>Never let a high-intent prospect go cold</p>
-                  </Link>
-                  <Link href="/real-estate-site-visit-automation" onClick={closeMenu} className="dropdown-card">
-                    <span className="card-tag">SITE VISITS</span>
-                    <strong>Site Visit Automation</strong>
-                    <p>Slot booking, calendar sync & reminders</p>
+                    <p>Scheduled callbacks and advisor reminders</p>
                   </Link>
                   <Link href="/real-estate-ai-automation" onClick={closeMenu} className="dropdown-card">
                     <span className="card-tag">PLATFORM</span>
                     <strong>AI Sales Automation</strong>
-                    <p>End-to-end real estate sales operating system</p>
+                    <p>Cold database batching and source operations</p>
                   </Link>
                 </div>
               </div>
@@ -140,25 +130,25 @@ export function Navbar() {
                   <Link href="/ai-crm-for-real-estate-developers" onClick={closeMenu} className="dropdown-list-item">
                     <div>
                       <strong>Real Estate Developers</strong>
-                      <p>Multi-project lead routing & CP management</p>
+                    <p>Multi-project lead routing & team reporting</p>
                     </div>
                   </Link>
                   <Link href="/ai-crm-for-real-estate-agents" onClick={closeMenu} className="dropdown-list-item">
                     <div>
                       <strong>Brokers & Agencies</strong>
-                      <p>Centralize buyer requirements & listings</p>
+                    <p>Centralize buyer requirements & lead ownership</p>
                     </div>
                   </Link>
                   <Link href="/real-estate-lead-management" onClick={closeMenu} className="dropdown-list-item">
                     <div>
                       <strong>Property Consultants</strong>
-                      <p>Prioritize high-intent investor leads</p>
+                    <p>Work callbacks, follow-ups and site visits</p>
                     </div>
                   </Link>
                   <Link href="/#industries" onClick={closeMenu} className="dropdown-list-item">
                     <div>
                       <strong>Enterprise Sales Teams</strong>
-                      <p>Real-time pipeline transparency & rep velocity</p>
+                    <p>Workload, yield and source visibility</p>
                     </div>
                   </Link>
                 </div>
@@ -284,25 +274,17 @@ export function Navbar() {
                   <span>AI Lead Management</span>
                   <small>Qualification & Scoring</small>
                 </Link>
-                <Link href="/real-estate-ai-calling" onClick={closeMenu} className="mobile-nav-link">
-                  <span>AI Calling</span>
-                  <small>Inbound & Outbound Voice</small>
-                </Link>
                 <Link href="/real-estate-whatsapp-automation" onClick={closeMenu} className="mobile-nav-link">
                   <span>WhatsApp AI</span>
-                  <small>Automated Messaging</small>
+                  <small>Qualification & Transcripts</small>
                 </Link>
                 <Link href="/real-estate-sales-automation" onClick={closeMenu} className="mobile-nav-link">
                   <span>Sales Automation</span>
-                  <small>Lead to Contract Flows</small>
+                  <small>Assignment, Statuses & Reporting</small>
                 </Link>
                 <Link href="/real-estate-lead-follow-up" onClick={closeMenu} className="mobile-nav-link">
                   <span>Follow-Up Automation</span>
-                  <small>7-Day & 14-Day Cadences</small>
-                </Link>
-                <Link href="/real-estate-site-visit-automation" onClick={closeMenu} className="mobile-nav-link">
-                  <span>Site Visit Automation</span>
-                  <small>Slot Booking & Reminders</small>
+                  <small>Callbacks & Advisor Reminders</small>
                 </Link>
               </div>
 

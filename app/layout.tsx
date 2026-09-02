@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   category: 'business software',
   keywords: [
     'real estate CRM',
-    'AI CRM for real estate',
+    'WhatsApp CRM for real estate',
     'real estate CRM software',
     'real estate automation software',
     'real estate lead management software',
     'real estate sales automation',
     'real estate WhatsApp automation',
-    'real estate AI calling',
+    'real estate callback reminders',
   ],
   alternates: {
     canonical: '/',
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     siteName: siteConfig.name,
-    title: 'AI CRM & Automation Built for Real Estate',
-    description: 'Capture, qualify, follow up, and convert real estate leads automatically with Vrumo AI.',
+    title: 'Real Estate CRM & WhatsApp Lead Management',
+    description: 'Capture, qualify, assign and follow up on real estate leads with role-based dashboards, callback reminders and a complete activity history.',
     images: [{ url: '/og.png', width: 1536, height: 1024, alt: 'Vrumo AI real estate CRM and automation platform' }],
   },
   twitter: {

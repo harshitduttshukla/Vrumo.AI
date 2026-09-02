@@ -4,9 +4,9 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'About Vrumo AI | AI CRM & Automation for Real Estate',
+  title: 'About Vrumo AI | Real Estate CRM & WhatsApp Lead Management',
   description:
-    'Learn why Vrumo AI was built exclusively for real estate developers, brokers, and sales teams to automate lead qualification, WhatsApp nurturing, and site visit scheduling.',
+    'Learn how Vrumo builds real estate CRM workflows for WhatsApp qualification, lead ownership, callback management and sales reporting.',
   alternates: {
     canonical: '/about',
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     url: '/about',
     title: 'About Vrumo AI | Real Estate CRM & Automation',
     description:
-      'Vrumo AI is an AI-powered CRM and automation platform engineered specifically for property developers and real estate sales organizations.',
+      'Vrumo builds real estate CRM workflows around the daily work of administrators and sales advisors.',
     images: [{ url: '/og.png', width: 1536, height: 1024, alt: 'About Vrumo AI' }],
   },
 };
@@ -24,23 +24,23 @@ export default function AboutPage() {
   const principles = [
     {
       num: '01',
-      title: 'Built Exclusively for Real Estate',
-      desc: 'Generic CRMs treat leads as corporate accounts. We build around property inventory, unit configurations (BHK), site visit logistics, and high-ticket consumer buying journeys.',
+      title: 'Built Around Real Estate Work',
+      desc: 'The workflow is designed around projects, budgets, purchase purpose, call outcomes, callbacks, site visits and long buying journeys.',
     },
     {
       num: '02',
-      title: 'Under-60-Second Speed to Lead',
-      desc: 'Property buyers contact multiple projects simultaneously. We automate instant, context-aware engagement across WhatsApp and voice before intent decays.',
+      title: 'Fast, Verifiable Lead Ownership',
+      desc: 'Qualified enquiries are routed by project rules or round-robin, assigned to a named advisor and recorded in the activity history.',
     },
     {
       num: '03',
-      title: 'Human-in-the-Loop Architecture',
-      desc: 'AI handles repetitive qualification, calendar coordination, and record keeping so human sales closers can spend 100% of their energy on client relationships.',
+      title: 'Human-Owned Conversations',
+      desc: 'The chatbot gathers context and the CRM coordinates the work; the sales advisor reads the transcript, makes the call and records the outcome.',
     },
     {
       num: '04',
-      title: 'Enterprise Data Protection',
-      desc: 'Your buyer database is your most valuable asset. We protect it with role-based access, masked contact numbers, and strict privacy controls.',
+      title: 'Role-Based Visibility',
+      desc: 'Admins can review the full operation while each salesperson sees only the leads assigned to their own account.',
     },
   ];
 
@@ -63,7 +63,7 @@ export default function AboutPage() {
               </span>
               <h1>We Build the Sales Operating System for Modern Real Estate.</h1>
               <p className="about-hero-lead">
-                Vrumo AI was created to solve one fundamental problem: real estate teams don&apos;t lose deals because their properties are undesirable—they lose deals because manual follow-up is too slow, context is lost in personal inboxes, and leads go cold.
+              Vrumo was created to solve one operational problem: real estate enquiries arrive from many sources, but ownership, conversation context and the next action are rarely visible in one place.
               </p>
             </div>
           </div>
@@ -78,14 +78,14 @@ export default function AboutPage() {
             </div>
             <div className="narrative-body">
               <p>
-                In high-stakes property transactions, sales executives spend over 60% of their working day doing manual administrative drudgery: downloading CSV files from ad managers, dialing unverified phone numbers, copying notes between WhatsApp threads and spreadsheets, and coordinating weekend calendars.
+                Real estate teams work across ad campaigns, WhatsApp, imported spreadsheets, broadcasts and phone calls. Without a shared record, the same advisor must reconstruct the buyer&apos;s context before every follow-up.
               </p>
               <p>
-                We engineered Vrumo AI as a dedicated real estate intelligence layer. From the second a buyer clicks a digital ad or sends a WhatsApp inquiry, our system captures the context, qualifies the criteria (budget, configuration, location, timeline), synchronizes the CRM record, and schedules the site visit tour.
+                Vrumo brings those steps into one deployed workflow: capture the enquiry, qualify the requirement in WhatsApp, assign an owner, preserve the transcript, schedule callbacks and keep a permanent operational history.
               </p>
               <div className="narrative-callout">
                 <strong>Our Core Operating Formula:</strong>
-                <span>Capture the lead &bull; Qualify the intent &bull; Follow up automatically &bull; Schedule the visit &bull; Close the deal.</span>
+                <span>Capture the lead &bull; Qualify the requirement &bull; Assign the owner &bull; Track the callback &bull; Record the outcome.</span>
               </div>
             </div>
           </div>
@@ -116,27 +116,27 @@ export default function AboutPage() {
         <section className="about-team-section">
           <div className="wrap team-layout">
             <div>
-              <span className="section-kicker">EDITORIAL & ENGINEERING STANDARDS</span>
-              <h2>Domain Expertise, Not Generic Silicon Valley Templates.</h2>
+              <span className="section-kicker">PRODUCT STANDARD</span>
+              <h2>Documented Workflows, Not Generic Feature Lists.</h2>
               <p>
-                Our engineering and systems teams have deep domain experience across enterprise real estate operations, cloud telephony, WhatsApp Business API infrastructure, and high-volume property marketing funnels.
+                We design from the real actions admins and advisors perform: import, filter, assign, call, update status, schedule, note, verify and report.
               </p>
               <p>
-                We do not publish generic AI fluff. Every guide in our knowledge base, every feature in our platform, and every workflow trigger is tested against actual property sales scenarios.
+                Product claims should map to something visible in the workflow. That is why the CRM exposes role-based dashboards, source-specific queues, callback reminders and a read-only activity history.
               </p>
             </div>
             <div className="team-stats-box">
               <div className="stat-card">
-                <strong>&lt; 60s</strong>
-                <span>Average AI Lead Response Time</span>
+                <strong>4</strong>
+                <span>Admin Lead Queues</span>
               </div>
               <div className="stat-card">
-                <strong>100%</strong>
-                <span>Real Estate Domain Specific</span>
+                <strong>10</strong>
+                <span>Documented Lead Statuses</span>
               </div>
               <div className="stat-card">
-                <strong>24/7</strong>
-                <span>Autonomous Lead Qualification</span>
+                <strong>500</strong>
+                <span>New Leads Per Active Cold Batch</span>
               </div>
             </div>
           </div>

@@ -7,7 +7,7 @@ import { contacts } from '@/lib/contacts';
 export const metadata: Metadata = {
   title: 'Talk to Vrumo AI | Real Estate CRM & Sales Automation',
   description:
-    'Talk to the Vrumo AI team. Contact Divyaman Pal (Sales & Partnerships) or Harshit Shukla (Product & Technology) for real estate CRM, WhatsApp automation, and AI calling workflows.',
+    'Talk to the Vrumo team about real estate CRM, WhatsApp qualification, lead assignment, callback reminders and sales reporting.',
   alternates: {
     canonical: '/contact',
   },
@@ -41,7 +41,7 @@ export default function ContactPage() {
               </span>
               <h1>Talk to Vrumo AI</h1>
               <p className="contact-hero-lead">
-                Tell us about your real estate sales process, lead flow, or repetitive workflow. We&apos;ll help you identify where AI automation can make the biggest difference.
+                Tell us how your leads arrive, how they are assigned and where follow-ups are getting lost. We&apos;ll map the workflow to a practical CRM setup.
               </p>
             </div>
           </div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <p>
-                    For API integrations, WhatsApp Business API setup, AI calling agent configurations, and custom CRM syncs.
+                    For WhatsApp qualification flows, CRM data design, assignment logic, imports, notifications and reporting.
                   </p>
                   <div className="contact-links-stack">
                     <div className="contact-row">
@@ -146,20 +146,20 @@ export default function ContactPage() {
 
                 <div className="consultation-options-list">
                   <div className="option-item">
-                    <strong>01. Lead Capture Audit</strong>
-                    <p>Connecting Meta Ads, Google Ads, 99acres, MagicBricks, Housing.com, and website forms into one clean pipeline.</p>
+                    <strong>01. Lead Source Audit</strong>
+                    <p>Mapping ads, direct WhatsApp, website chatbot leads, imported databases and broadcast replies into the right queues.</p>
                   </div>
                   <div className="option-item">
-                    <strong>02. WhatsApp AI Qualification</strong>
-                    <p>Testing real-time brochure delivery, multi-attribute budget verification, and automated site visit booking.</p>
+                    <strong>02. WhatsApp Qualification</strong>
+                    <p>Reviewing the questions that capture project, country, budget, purpose, timeline and preferred call time.</p>
                   </div>
                   <div className="option-item">
-                    <strong>03. Voice AI & Calling Agents</strong>
-                    <p>Live simulation of inbound ad calling qualification, instant call summaries, and missed lead recovery.</p>
+                    <strong>03. Advisor Workflow</strong>
+                    <p>Walking through assigned leads, transcripts, Call Now, statuses, callback scheduling, notes and the activity history.</p>
                   </div>
                   <div className="option-item">
-                    <strong>04. CRM Integration Blueprint</strong>
-                    <p>Integrating with existing platforms (Salesforce, HubSpot, LeadSquared) or deploying Vrumo as your full sales CRM.</p>
+                    <strong>04. Admin Operations</strong>
+                    <p>Reviewing team workloads, project popularity, source filters, cold-database allocation and CSV exports.</p>
                   </div>
                 </div>
 
@@ -180,16 +180,16 @@ export default function ContactPage() {
 
                 <div className="form-assurances">
                   <div>
-                    <small>RESPONSE TIME</small>
-                    <strong>Under 2 hours</strong>
+                    <small>PRODUCT</small>
+                    <strong>Live CRM Walkthrough</strong>
                   </div>
                   <div>
-                    <small>PLATFORM PREVIEW</small>
-                    <strong>Live Sandbox Tour</strong>
+                    <small>ROLE VIEWS</small>
+                    <strong>Admin + Salesperson</strong>
                   </div>
                   <div>
-                    <small>CONFIDENTIALITY</small>
-                    <strong>Strict NDA Protected</strong>
+                    <small>WORKFLOW</small>
+                    <strong>Source to Follow-Up</strong>
                   </div>
                 </div>
               </div>
@@ -208,27 +208,27 @@ export default function ContactPage() {
 
             <div className="contact-faq-grid">
               <article>
-                <h3>How quickly can our team go live with Vrumo AI?</h3>
+                <h3>What should we bring to the first workflow session?</h3>
                 <p>
-                  Most real estate developer and brokerage teams are fully onboarded in 2 to 5 business days. We configure your lead capture channels, WhatsApp Business API templates, qualification scoring rules, and inventory catalogs.
+                  Bring your current lead sources, sales roles, assignment rules, lead statuses, required buyer fields and the follow-up process your team already uses.
                 </p>
               </article>
               <article>
-                <h3>Can Vrumo work alongside our existing CRM?</h3>
+                <h3>Can imported databases be assigned across a team?</h3>
                 <p>
-                  Yes. If you currently use Salesforce, HubSpot, LeadSquared, or an internal ERP, Vrumo acts as the intelligent front-end automation layer. It qualifies leads and pushes clean, enriched records back into your primary CRM.
+                  Yes. The deployed importer accepts Excel and CSV files and can assign every row to one advisor or distribute rows evenly across selected advisors.
                 </p>
               </article>
               <article>
                 <h3>What is required to set up WhatsApp automation?</h3>
                 <p>
-                  You will need an active WhatsApp Business Account (WABA) number or phone line. Our team assists with Meta business verification, green-tick submission, approved template registrations, and interactive flow triggers.
+                  You need a business WhatsApp number and approved provider/template access for outbound notifications. The exact setup depends on the account and workflow being deployed.
                 </p>
               </article>
               <article>
-                <h3>Who will manage our ongoing campaign optimizations?</h3>
+                <h3>Can the CRM reflect our own routing rules?</h3>
                 <p>
-                  Every Vrumo customer receives direct support from our engineering and real estate operations team. You have direct access to Divyaman Pal and Harshit Shukla for workflow adjustments and pipeline optimizations.
+                  Yes. The current deployment combines project-specific ownership with round-robin distribution. Your implementation can be scoped around the rules your sales operation actually needs.
                 </p>
               </article>
             </div>

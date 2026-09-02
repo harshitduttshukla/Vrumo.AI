@@ -6,78 +6,78 @@ import Link from 'next/link';
 const modules = [
   {
     number: '01',
-    label: 'AI LEAD CAPTURE',
-    title: 'Capture Every Real Estate Enquiry.',
-    text: 'Bring website forms, WhatsApp, campaigns, calls, landing pages and APIs into one real estate CRM.',
-    points: ['Multi-source capture', 'Automatic lead records', 'Instant owner assignment'],
+    label: 'MULTI-SOURCE CAPTURE',
+    title: 'Bring Every Lead Into One Working Queue.',
+    text: 'Organize Meta ads, direct WhatsApp enquiries, website chatbot leads, imported databases and broadcast replies in one CRM.',
+    points: ['Source-specific tabs', 'Search and combined filters', 'Automatic lead records'],
     visual: 'capture',
   },
   {
     number: '02',
-    label: 'AI QUALIFICATION',
-    title: 'Know Which Leads Are Ready to Buy.',
-    text: 'Understand the property, budget, location, buying timeline, financing need and intent behind each enquiry.',
-    points: ['Requirement extraction', 'Intent scoring', 'Priority routing'],
+    label: 'WHATSAPP QUALIFICATION',
+    title: 'Give Advisors the Context Before They Call.',
+    text: 'The chatbot records project interest, country, budget, purchase purpose, decision timeline and preferred call time.',
+    points: ['Structured buyer requirements', 'Two-message qualification gate', 'Urgent callback flag'],
     visual: 'score',
   },
   {
     number: '03',
-    label: 'WHATSAPP AI',
-    title: 'Your Sales Assistant on WhatsApp.',
-    text: 'Answer property questions, gather requirements, share approved information and move conversations to a site visit.',
-    points: ['Context-aware replies', 'Automatic follow-ups', 'Visit scheduling'],
-    visual: 'whatsapp',
-  },
-  {
-    number: '04',
-    label: 'AI CALLING',
-    title: 'Talk to Leads. Capture the Outcome.',
-    text: 'Handle bounded inbound and outbound conversations, qualify intent and trigger the next approved sales step.',
-    points: ['Inbound and outbound', 'Call summaries', 'CRM activity sync'],
+    label: 'ASSIGNMENT & ACCESS',
+    title: 'Route Leads and Protect Ownership.',
+    text: 'Use project-specific rules or round-robin assignment, then give each advisor access only to the leads they own.',
+    points: ['Project-based routing', 'Round-robin distribution', 'Role-based dashboards'],
     visual: 'calling',
   },
   {
+    number: '04',
+    label: 'COMPLETE LEAD RECORD',
+    title: 'Keep the Conversation With the Lead.',
+    text: 'Open one record to see the full WhatsApp transcript, captured attributes, brochure links, internal notes, owner and source.',
+    points: ['Conversation transcript', 'Private permanent notes', 'Clickable source history'],
+    visual: 'whatsapp',
+  },
+  {
     number: '05',
-    label: 'REAL ESTATE CRM',
-    title: 'Move Every Opportunity Forward.',
-    text: 'See every enquiry, interaction, site visit, owner and next action in a pipeline built around property sales.',
-    points: ['Project-level pipelines', 'Complete lead history', 'Sales-owner visibility'],
+    label: 'COLD DATABASE OPERATIONS',
+    title: 'Make Large Imports Workable for Sales.',
+    text: 'Import Excel or CSV databases, split them across advisors and release new leads in manageable active batches of 500.',
+    points: ['Single-owner or round-robin import', '500-lead active batches', 'Per-file progress tracker'],
     visual: 'pipeline',
   },
   {
     number: '06',
-    label: 'WORKFLOW AUTOMATION',
-    title: 'Make the Next Step Automatic.',
-    text: 'Trigger messages, calls, assignments, reminders and record updates from real events in your sales process.',
-    points: ['Follow-up sequences', 'Team notifications', 'System synchronization'],
+    label: 'CALLBACKS & AUDIT',
+    title: 'Make Every Follow-Up Accountable.',
+    text: 'Schedule exact callback times, remind the assigned advisor on WhatsApp and keep a read-only history of every change.',
+    points: ['Scheduled callback reminders', 'Ten sales statuses', 'Read-only activity history'],
     visual: 'workflow',
   },
 ];
 
 const faqs = [
   [
-    'What is Vrumo AI and how does it help real estate teams?',
-    'Vrumo AI combines real estate CRM, lead qualification, calling, WhatsApp workflows and sales automation in one system. It helps teams capture enquiries, understand buyer requirements, coordinate the next action and keep the pipeline current.',
+    'What does the WhatsApp bot capture?',
+    'The deployed flow records the interested project, country, budget range, purchase purpose, decision timeline and preferred call time. The full conversation transcript remains attached to the lead record.',
   ],
   [
-    'Can Vrumo AI manage leads from WhatsApp and other channels?',
-    'Yes. Vrumo can bring suitable enquiries from WhatsApp, websites, forms, campaigns, phone calls and connected systems into one lead record, subject to the access and permissions available for each source.',
+    'How are leads assigned to sales advisors?',
+    'The CRM supports project-specific routing and round-robin assignment. An advisor receives a WhatsApp alert for a newly assigned organic, ad or chatbot lead; imported cold-database leads follow a separate batch workflow.',
   ],
   [
-    'Can I track site visits, follow-ups and lead activity?',
-    'Yes. Each lead can keep a visible history of conversations, requirements, follow-up status, site-visit details, sales ownership and the next planned action.',
+    'What can an admin see that a salesperson cannot?',
+    'Admins see the full lead database, source tabs, team workloads, conversion yield, project popularity, imports and exports. Sales advisors see only their own assigned leads, personal metrics and upcoming callbacks.',
   ],
   [
-    'Can Vrumo AI automate repetitive sales workflows?',
-    'Yes. Vrumo can automate bounded steps such as lead capture, qualification, routing, approved follow-ups, reminders, notifications and CRM updates while preserving clear human handoffs.',
+    'How do callback reminders work?',
+    'When an advisor sets the status to Call back and saves an exact date and time, the CRM queues one WhatsApp reminder approximately a day before. Changing the callback time resets the reminder for the new schedule.',
   ],
   [
-    'Can the CRM integrate with our existing tools?',
-    'Vrumo can connect with suitable CRM, calendar, telephony, database and internal APIs. Feasibility depends on the tool’s available API, permissions and the workflow your team wants to automate.',
+    'How does the 500-lead batch system work?',
+    'For large imported databases, each advisor sees 500 untouched leads at a time plus every lead they have already contacted. Once all 500 have moved out of New, the next 500 are released automatically.',
   ],
   [
-    'Is Vrumo AI suitable for individual brokers and larger real estate teams?',
-    'Yes. The system can support an individual broker’s lead workflow as well as multi-project developer, agency and sales-team processes with routing, ownership and pipeline visibility.',
+    'Which lead statuses are supported?',
+    'The live workflow uses New, Call back, Did not pick up, Not reachable, Follow up, Site visit, Wrong no., Deal success, Rejected and Not interested. Every change is written to the activity history.',
   ],
 ];
 
@@ -86,17 +86,17 @@ function ModuleVisual({ type }: { type: string }) {
     return (
       <div className="module-ui capture-ui">
         <div className="source-row">
-          <span>WEB</span>
-          <span>WA</span>
-          <span>CALL</span>
           <span>ADS</span>
+          <span>WA</span>
+          <span>BOT</span>
+          <span>CSV</span>
         </div>
         <div className="capture-arrow">↓</div>
         <div className="new-record">
           <i>RS</i>
           <div>
             <small>NEW LEAD CAPTURED</small>
-            <strong>Rahul Sharma</strong>
+            <strong>Priya Sharma</strong>
           </div>
           <b>CRM ✓</b>
         </div>
@@ -106,15 +106,13 @@ function ModuleVisual({ type }: { type: string }) {
     return (
       <div className="module-ui score-ui">
         <div className="score-ring">
-          <span>
-            92<small>%</small>
-          </span>
+          <span>6<small> fields</small></span>
         </div>
         <div className="score-detail">
-          <small>HIGH INTENT</small>
-          <strong>3 BHK · Gurgaon</strong>
-          <p>₹1.2 Cr · 0–30 days</p>
-          <span>Ready for sales</span>
+          <small>QUALIFICATION CAPTURED</small>
+          <strong>The Westin Residences</strong>
+          <p>₹5–7 Cr · Self Use · India</p>
+          <span>Preferred call: Morning</span>
         </div>
       </div>
     );
@@ -122,18 +120,18 @@ function ModuleVisual({ type }: { type: string }) {
     return (
       <div className="module-ui whatsapp-ui">
         <div className="chat incoming">
-          Is the 3 BHK still available?
+          I&apos;m interested in The Westin Residences.
           <time>10:42</time>
         </div>
         <div className="chat outgoing">
           <b>V</b>
-          <span>Yes. Would you like pricing and a site visit slot?</span>
+          <span>Is this for Self Use, Capital Growth or Monthly Income?</span>
           <time>10:42 ✓✓</time>
         </div>
         <div className="typing">
           <i />
           <i />
-          <i /> Vrumo is active
+          <i /> Full transcript saved to the lead
         </div>
       </div>
     );
@@ -141,12 +139,12 @@ function ModuleVisual({ type }: { type: string }) {
     return (
       <div className="module-ui call-ui">
         <div className="call-person">
-          <i>RS</i>
+          <i>PS</i>
           <div>
-            <small>AI CALL IN PROGRESS</small>
-            <strong>Rahul Sharma</strong>
+            <small>NEW LEAD ASSIGNED</small>
+            <strong>Priya Sharma</strong>
           </div>
-          <time>00:42</time>
+          <time>SP008</time>
         </div>
         <div className="waveform">
           {[18, 28, 10, 36, 22, 31, 14, 39, 20, 30, 12, 34, 17, 25, 9, 32].map((height, index) => (
@@ -154,9 +152,9 @@ function ModuleVisual({ type }: { type: string }) {
           ))}
         </div>
         <div className="call-result">
-          <span>✓ Requirement</span>
-          <span>✓ Budget</span>
-          <span>✓ Visit</span>
+          <span>✓ Project rule</span>
+          <span>✓ Owner set</span>
+          <span>✓ Alert queued</span>
         </div>
       </div>
     );
@@ -164,23 +162,23 @@ function ModuleVisual({ type }: { type: string }) {
     return (
       <div className="module-ui mini-pipeline">
         <div>
-          <small>NEW</small>
+          <small>ACTIVE BATCH</small>
           <span>
-            <b>PM</b>2 BHK · Noida
+            <b>500</b>New leads
           </span>
         </div>
         <i className="pipe-arrow">→</i>
         <div>
-          <small>QUALIFIED</small>
+          <small>CONTACTED</small>
           <span>
-            <b>RS</b>3 BHK · Gurgaon
+            <b>47</b>Always visible
           </span>
         </div>
         <i className="pipe-arrow">→</i>
         <div>
-          <small>VISIT</small>
+          <small>NEXT BATCH</small>
           <span>
-            <b>AV</b>Villa · Pune
+            <b>500</b>Auto-allocates
           </span>
         </div>
       </div>
@@ -188,17 +186,17 @@ function ModuleVisual({ type }: { type: string }) {
   return (
     <div className="module-ui workflow-ui">
       <div>
-        <span>LEAD QUALIFIED</span>
+        <span>STATUS: CALL BACK</span>
         <b>✓</b>
       </div>
       <i />
       <div>
-        <span>FOLLOW-UP SENT</span>
+        <span>CALLBACK TIME SAVED</span>
         <b>✓</b>
       </div>
       <i />
       <div>
-        <span>SALES TEAM ALERTED</span>
+        <span>REMINDER + AUDIT LOG</span>
         <b>✓</b>
       </div>
     </div>
@@ -219,8 +217,8 @@ export function ProblemSection() {
             </h2>
           </div>
           <p>
-            Enquiries arrive everywhere. Sales activity gets split across phones, spreadsheets and CRMs. The first
-            response is slow, context disappears, and good leads go cold.
+            Enquiries arrive from ads, WhatsApp, chatbots, broadcasts and spreadsheets. Without one owner, one status
+            and one history, advisors lose context and managers lose visibility.
           </p>
         </div>
         <div className="problem-grid">
@@ -231,16 +229,16 @@ export function ProblemSection() {
                 <b>01</b>Leads arrive from disconnected channels
               </li>
               <li>
-                <b>02</b>CRM updates depend on manual entry
+                <b>02</b>Lead ownership is hard to verify
               </li>
               <li>
-                <b>03</b>WhatsApp enquiries wait too long
+                <b>03</b>WhatsApp context stays in the inbox
               </li>
               <li>
-                <b>04</b>Follow-ups stop after the first call
+                <b>04</b>Callbacks depend on memory
               </li>
               <li>
-                <b>05</b>Pipeline visibility is always incomplete
+                <b>05</b>Cold databases overwhelm advisors
               </li>
             </ul>
           </article>
@@ -275,27 +273,27 @@ export function ProblemSection() {
               <div className="flow-line desktop-flow">
                 <b>Lead</b>
                 <i>→</i>
-                <b>AI qualified</b>
+                <b>Bot qualified</b>
                 <i>→</i>
                 <b>CRM</b>
                 <i>→</i>
-                <b>Follow-up</b>
+                <b>Advisor assigned</b>
                 <i>→</i>
-                <b>Site visit</b>
+                <b>Callback tracked</b>
               </div>
               <div className="flow-line mobile-flow">
                 <b>Lead</b>
                 <i>↓</i>
-                <b>AI qualified</b>
+                <b>Bot qualified</b>
                 <i>↓</i>
                 <b>CRM</b>
                 <i>↓</i>
-                <b>Follow-up</b>
+                <b>Advisor assigned</b>
                 <i>↓</i>
-                <b>Site visit</b>
+                <b>Callback tracked</b>
               </div>
             </div>
-            <p>Capture the lead. Qualify the intent. Schedule the visit. Update the CRM.</p>
+            <p>Capture the lead. Preserve the context. Assign an owner. Track the next action.</p>
           </div>
         </div>
       </div>
@@ -308,13 +306,13 @@ export function PlatformSection() {
     <section className="platform-section" id="platform">
       <div className="wrap">
         <div className="section-heading centered-heading">
-          <span className="section-kicker">THE VRUMO PLATFORM</span>
+          <span className="section-kicker">THE DEPLOYED CRM WORKFLOW</span>
           <h2>
-            One AI Layer Across Your Entire
+            One Operating System Across Your
             <br />
             Real Estate Sales Process.
           </h2>
-          <p>Every module works together, so the context from one conversation becomes the next action in your pipeline.</p>
+          <p>Every module below maps to the live admin and salesperson workflows documented in the deployed CRM.</p>
         </div>
         <div className="module-grid">
           {modules.map((module) => (
@@ -339,77 +337,70 @@ export function PlatformSection() {
   );
 }
 
-export function CallingSection() {
+export function OperationsSection() {
   return (
     <section className="calling-section">
       <div className="wrap calling-layout">
         <div className="calling-copy">
-          <span className="section-kicker">AI CALLING</span>
-          <h2>AI That Can Actually Talk to Your Leads.</h2>
+          <span className="section-kicker">ROLE-BASED OPERATIONS</span>
+          <h2>One CRM. The Right View for Every Role.</h2>
           <p>
-            Vrumo AI calling agents can handle bounded inbound and outbound conversations, qualify prospects, answer
-            approved questions, and trigger the next step automatically.
+            Admins get team-wide visibility and advisors get a focused daily queue. Lead access, metrics and actions
+            stay aligned to each person&apos;s responsibility.
           </p>
           <ul>
             <li>
-              <span>01</span>Capture requirements during the call
+              <span>01</span>Admins see source tabs, team workloads and conversion yield
             </li>
             <li>
-              <span>02</span>Identify budget, location and buying timeline
+              <span>02</span>Sales advisors see only the leads assigned to their account
             </li>
             <li>
-              <span>03</span>Write the outcome back to your CRM
+              <span>03</span>Search, filters and page position are preserved while working
             </li>
           </ul>
-          <Link href="/real-estate-ai-calling" className="button button-quiet">
-            Explore real estate AI calling <span>↗</span>
+          <Link href="/real-estate-crm" className="button button-quiet">
+            Explore the CRM workspace <span>↗</span>
           </Link>
         </div>
         <div className="call-console">
           <div className="console-head">
-            <span>VRUMO / VOICE AGENT</span>
-            <i>LIVE</i>
+            <span>CRM / ROLE ACCESS</span>
+            <i>SYNCED</i>
           </div>
           <div className="caller">
-            <span>RS</span>
-            <small>INCOMING CALL</small>
-            <h3>Rahul Sharma</h3>
-            <p>Property enquiry · Gurgaon</p>
-            <time>00:42</time>
-          </div>
-          <div className="voice-wave">
-            {[22, 42, 18, 58, 31, 65, 24, 48, 70, 29, 53, 20, 62, 36, 56, 26, 46, 18, 37, 24, 58, 30, 47, 21].map(
-              (height, index) => (
-                <i key={index} style={{ height }} />
-              )
-            )}
+            <span>AD</span>
+            <small>ADMIN DASHBOARD</small>
+            <h3>Team-wide lead operations</h3>
+            <p>Ads · Imported · Broadcast · Junk</p>
+            <time>10s refresh</time>
           </div>
           <div className="call-analysis">
             <div>
-              <small>INTENT</small>
-              <strong>Property enquiry</strong>
+              <small>ADMIN VIEW</small>
+              <strong>All leads</strong>
             </div>
             <div>
-              <small>LEAD QUALITY</small>
-              <strong>92% · High</strong>
+              <small>ADVISOR VIEW</small>
+              <strong>Assigned only</strong>
             </div>
             <div>
-              <small>AGENT STATUS</small>
-              <strong>Qualifying</strong>
+              <small>TABLE SIZE</small>
+              <strong>50 per page</strong>
             </div>
           </div>
           <ul className="call-checks">
             <li>
-              <span>✓</span>Requirement captured<time>00:18</time>
+              <span>✓</span>Admin KPIs, workloads and project popularity<time>ADMIN</time>
             </li>
             <li>
-              <span>✓</span>Budget identified<time>00:29</time>
+              <span>✓</span>Personal metrics and next five callbacks<time>SALES</time>
             </li>
             <li>
-              <span>✓</span>Site visit scheduled<time>00:38</time>
+              <span>✓</span>Combined project, advisor, status and source filters<time>FILTER</time>
             </li>
             <li>
-              <span>✓</span>CRM updated<time>00:42</time>
+              <span>✓</span>Read-only activity history for every lead<time>AUDIT</time>
             </li>
           </ul>
         </div>
@@ -419,16 +410,16 @@ export function CallingSection() {
 }
 
 const pipelineData = [
-  ['NEW LEAD', [['Priya Mehta', '2 BHK · Noida', '₹85 L', '78'], ['Karan Shah', 'Office · Mumbai', '₹3.1 Cr', '71']]],
-  ['CONTACTED', [['Neha Kapoor', '3 BHK · Pune', '₹1.4 Cr', '74']]],
-  ['QUALIFIED', [['Rahul Sharma', '3 BHK · Gurgaon', '₹1.2 Cr', '92'], ['Amit Verma', 'Villa · Pune', '₹2.4 Cr', '88']]],
-  ['SITE VISIT', [['Meera Nair', '2 BHK · Bengaluru', '₹98 L', '84']]],
-  ['NEGOTIATION', [['Rohan Sethi', 'Penthouse · Noida', '₹4.8 Cr', '91']]],
-  ['BOOKED', [['Diya Patel', '3 BHK · Ahmedabad', '₹1.1 Cr', '95']]],
+  ['NEW', [['Priya Sharma', 'The Westin Residences', '₹5–7 Cr', 'Sherlin'], ['Karan Shah', 'Trump Tower', '₹7–10 Cr', 'Aashna']]],
+  ['CALL BACK', [['Mohammed Al Rashid', 'Al Marjan Island', 'AED 2M', 'Sanket']]],
+  ['DID NOT PICK UP', [['Neha Kapoor', 'The Westin Residences', '₹3–5 Cr', 'Sherlin']]],
+  ['FOLLOW UP', [['Rohit Verma', 'Trump Tower', '₹7–10 Cr', 'Aashna']]],
+  ['SITE VISIT', [['Meera Nair', 'The Westin Residences', '₹5–7 Cr', 'Sherlin']]],
+  ['DEAL SUCCESS', [['Diya Patel', 'Al Marjan Island', 'AED 3M', 'Sanket']]],
 ] as const;
 
 export function CRMSection() {
-  const [activeTab, setActiveTab] = useState<string>('QUALIFIED');
+  const [activeTab, setActiveTab] = useState<string>('CALL BACK');
 
   const visibleColumns =
     activeTab === 'ALL'
@@ -442,29 +433,30 @@ export function CRMSection() {
           <div>
             <span className="section-kicker">PROPERTY SALES CRM</span>
             <h2>
-              A CRM Built Around the
+              A Lead Workspace Built Around the
               <br />
-              Real Estate Sales Cycle.
+              Work Advisors Do Every Day.
             </h2>
           </div>
           <p>
-            See where every opportunity stands, what each buyer needs, and the exact next action. No hunting across message
-            threads or spreadsheets.
+            Filter every lead by project, advisor, status and source, then open the record to call, update status, add a
+            note or schedule the next callback.
           </p>
         </div>
 
         <div className="pipeline-window">
           <div className="pipeline-toolbar">
             <div>
-              <b>Sales pipeline</b>
-              <span>46 active opportunities</span>
+              <b>Lead table</b>
+              <span>50 leads per page · grouped by activity date</span>
             </div>
             <div className="filters">
               <span className="filter-pill">All projects ▾</span>
+              <span className="filter-pill">All advisors ▾</span>
               <span className="filter-pill">All sources ▾</span>
-              <span className="filter-pill">High intent ▾</span>
+              <span className="filter-pill">All statuses ▾</span>
               <button className="add-lead-btn" type="button">
-                ＋ Add lead
+                Export CSV ↓
               </button>
             </div>
           </div>
@@ -498,7 +490,7 @@ export function CRMSection() {
                   <span>{stage}</span>
                   <b>{cards.length}</b>
                 </div>
-                {cards.map(([name, property, budget, score]) => (
+                {cards.map(([name, property, budget, advisor]) => (
                   <article key={name} className="pipeline-card">
                     <div className="pipeline-person">
                       <i>
@@ -508,12 +500,12 @@ export function CRMSection() {
                           .join('')}
                       </i>
                       <strong>{name}</strong>
-                      <em>{score}%</em>
+                      <em>{advisor}</em>
                     </div>
                     <p>{property}</p>
                     <small>{budget}</small>
                     <div className="pipeline-meta">
-                      <span>● AI qualified</span>
+                      <span>● Status updated</span>
                       <b>⋯</b>
                     </div>
                   </article>
@@ -527,7 +519,7 @@ export function CRMSection() {
           <Link href="/real-estate-crm" className="button button-quiet">
             Explore the real estate CRM <span>↗</span>
           </Link>
-          <p>Filter by project, property type, budget, location, lead score, owner or status.</p>
+          <p>Search by name or phone, combine filters, and return without losing your place.</p>
         </div>
       </div>
     </section>
@@ -535,25 +527,25 @@ export function CRMSection() {
 }
 
 const followSteps = [
-  'Lead qualified',
-  'AI sends WhatsApp',
-  'No response',
-  '24-hour follow-up',
-  'AI call',
-  'Site visit',
-  'Sales executive notified',
-  'CRM updated',
+  'Inbound enquiry',
+  'Two-message gate passed',
+  'Requirements captured',
+  'Routing rule applied',
+  'Advisor assigned',
+  'WhatsApp alert sent',
+  'Lead appears in dashboard',
+  'Activity logged',
 ];
-const visitSteps = [
-  'Lead qualified',
-  'Property selected',
-  'Availability checked',
-  'Calendar checked',
-  'Slot offered',
-  'Visit booked',
-  'Reminder sent',
-  'Sales agent notified',
-  'CRM updated',
+const callbackSteps = [
+  'Advisor calls the lead',
+  'Set status: Call back',
+  'Choose date and time',
+  'Save settings',
+  'Reminder queued',
+  'WhatsApp reminder sent',
+  'Advisor follows up',
+  'Status updated',
+  'Activity logged',
 ];
 
 function Workflow({ steps, green = false }: { steps: string[]; green?: boolean }) {
@@ -576,26 +568,26 @@ export function AutomationSection() {
     <section className="automation-section" id="automation">
       <div className="wrap">
         <div className="section-heading centered-heading light-heading">
-          <span className="section-kicker">AUTOMATION THAT CLOSES THE GAP</span>
-          <h2>Never Let a Good Lead Go Cold.</h2>
-          <p>Design the next action once. Vrumo keeps it moving, makes the handoff clear, and records what happened.</p>
+          <span className="section-kicker">DOCUMENTED AUTOMATIONS</span>
+          <h2>Automate the Handoff. Keep the Human Conversation.</h2>
+          <p>The deployed CRM automates qualification, assignment, notifications and callback reminders while advisors own the call.</p>
         </div>
         <div className="automation-grid">
           <article>
             <div className="automation-card-head">
-              <span>01 / FOLLOW-UP</span>
-              <h3>Follow up while intent is still warm.</h3>
-              <p>Move from a qualified enquiry to a human conversation without relying on memory.</p>
+              <span>01 / INBOUND ASSIGNMENT</span>
+              <h3>Turn a qualified chat into an owned lead.</h3>
+              <p>Route by project or round-robin, alert the advisor and record the handoff.</p>
             </div>
             <Workflow steps={followSteps} />
           </article>
           <article>
             <div className="automation-card-head">
-              <span>02 / SITE VISIT</span>
-              <h3>From enquiry to site visit—automatically.</h3>
-              <p>Coordinate availability, calendars, confirmations and team notifications in one flow.</p>
+              <span>02 / CALLBACK REMINDER</span>
+              <h3>Keep every promised callback visible.</h3>
+              <p>Schedule an exact time and remind the assigned advisor approximately one day before.</p>
             </div>
-            <Workflow steps={visitSteps} green />
+            <Workflow steps={callbackSteps} green />
           </article>
         </div>
         <div className="automation-links">
@@ -608,14 +600,14 @@ export function AutomationSection() {
 }
 
 const useCases = [
-  ['Lead Qualification', 'Identify high-intent prospects from real requirements.'],
-  ['WhatsApp Follow-Ups', 'Respond and continue approved sequences without manual chasing.'],
-  ['Missed Call Recovery', 'Create the next action when an enquiry call goes unanswered.'],
-  ['Site Visit Booking', 'Turn qualified conversations into confirmed property visits.'],
-  ['Lead Distribution', 'Route opportunities by project, location, value or ownership rules.'],
-  ['CRM Updates', 'Record conversations, requirements, actions and outcomes automatically.'],
-  ['Lead Re-engagement', 'Bring suitable dormant opportunities back into the pipeline.'],
-  ['Sales Notifications', 'Alert the right person when a valuable lead is ready.'],
+  ['WhatsApp Qualification', 'Capture project, country, budget, purpose, timeline and call preference.'],
+  ['Lead Distribution', 'Assign by project rule or round-robin and notify the right advisor.'],
+  ['Advisor Daily Queue', 'Prioritize New leads, scheduled callbacks and follow-ups from one view.'],
+  ['Cold Database Batching', 'Release imported leads in manageable 500-lead working batches.'],
+  ['Callback Scheduling', 'Store an exact callback date and send one reminder to the owner.'],
+  ['Lead Status Control', 'Track ten real call outcomes from New through Deal success.'],
+  ['Source Reporting', 'Compare ads, direct WhatsApp, imports and broadcast replies.'],
+  ['Audit & Notes', 'Keep permanent internal notes and a read-only activity trail.'],
 ];
 
 export function UseCasesSection() {
@@ -628,8 +620,8 @@ export function UseCasesSection() {
             <h2>Automate the Work Your Sales Team Repeats Every Day.</h2>
           </div>
           <p>
-            Start with one bottleneck or connect the full lead journey. Each workflow stays bounded by the rules, systems
-            and approvals you define.
+            The CRM is designed around the actual tasks performed by admins and sales advisors, with clear rules for
+            ownership, follow-up and reporting.
           </p>
         </div>
         <div className="use-case-grid">
@@ -653,21 +645,21 @@ export function HowItWorksSection() {
   const steps = [
     [
       '01',
-      'Connect Your Lead Sources',
-      'Connect website forms, WhatsApp, calling, campaigns and suitable CRM systems.',
-      ['WEBSITE', 'WHATSAPP', 'CALLING', 'CAMPAIGNS'],
+      'Capture the Enquiry',
+      'Collect leads from Meta ads, direct WhatsApp, the website chatbot, imported databases and broadcast replies.',
+      ['META ADS', 'WHATSAPP', 'WEBSITE BOT', 'IMPORTS'],
     ],
     [
       '02',
-      'Let AI Handle the Repetition',
-      'Vrumo captures, qualifies, communicates, follows up and updates connected systems.',
-      ['CAPTURE', 'QUALIFY', 'FOLLOW UP', 'SYNC'],
+      'Qualify and Assign',
+      'Store the buyer requirements, apply the qualification gate and route the lead to the right advisor.',
+      ['PROJECT', 'BUDGET', 'PURPOSE', 'OWNER'],
     ],
     [
       '03',
-      'Your Team Focuses on Closing',
-      'Sales teams receive qualified opportunities with the context and next action ready.',
-      ['QUALIFIED LEAD', 'CLEAR CONTEXT', 'HUMAN HANDOFF'],
+      'Work the Follow-Up',
+      'Advisors read the transcript, call the lead, update status, schedule callbacks and leave permanent notes.',
+      ['TRANSCRIPT', 'CALL NOW', 'CALLBACK', 'AUDIT TRAIL'],
     ],
   ];
   return (
@@ -676,7 +668,7 @@ export function HowItWorksSection() {
         <div className="section-heading centered-heading">
           <span className="section-kicker">HOW IT WORKS</span>
           <h2>
-            From Lead to Deal,
+            From First Message to Follow-Up,
             <br />
             Without the Manual Work.
           </h2>
@@ -704,14 +696,14 @@ export function HowItWorksSection() {
 }
 
 const integrationNames = [
-  'WhatsApp',
-  'Twilio',
-  'HubSpot',
-  'Salesforce',
-  'Google Calendar',
-  'Slack',
-  'REST API',
-  'PostgreSQL',
+  'Meta Ads',
+  'Direct WhatsApp',
+  'Website Chatbot',
+  'Excel / CSV',
+  'Broadcast Replies',
+  'WATI Alerts',
+  'CSV Export',
+  'Project Sources',
 ];
 
 export function IntegrationsAndImpact() {
@@ -720,18 +712,18 @@ export function IntegrationsAndImpact() {
       <section className="integrations-section" id="integrations">
         <div className="wrap integrations-layout">
           <div>
-            <span className="section-kicker">INTEGRATIONS</span>
-            <h2>Works With the Tools Your Real Estate Team Already Uses.</h2>
+            <span className="section-kicker">LEAD SOURCES & DELIVERY</span>
+            <h2>Every Lead Source, One Operating View.</h2>
             <p>
-              Connect Vrumo to the systems already in your workflow. If your CRM, lead source, calendar, telephony
-              provider or internal platform has a suitable API, Vrumo can usually connect to it.
+              The current CRM separates hot inbound leads, cold databases, broadcast replies and incomplete chats so
+              each source can be worked with the right process.
             </p>
-            <small>Integration availability depends on API access, permissions and your selected provider.</small>
+            <small>Imported leads use the 500-lead batch system and do not trigger new-lead WhatsApp alerts.</small>
           </div>
           <div className="integration-grid">
             {integrationNames.map((name, index) => (
               <div key={name}>
-                <span>{['W', 'T', 'H', 'S', '31', 'S', '⌁', 'DB'][index]}</span>
+                <span>{['AD', 'WA', 'BOT', 'XLS', 'BR', 'W', 'CSV', 'PRJ'][index]}</span>
                 <b>{name}</b>
               </div>
             ))}
@@ -742,28 +734,28 @@ export function IntegrationsAndImpact() {
         <div className="wrap">
           <div className="section-heading impact-heading">
             <span className="section-kicker">BUSINESS IMPACT</span>
-            <h2>What Happens When Your Team Stops Chasing Leads?</h2>
+            <h2>What Changes When the Workflow Is Visible?</h2>
           </div>
           <div className="impact-grid">
             <article>
               <span>01</span>
-              <h3>Faster Response</h3>
-              <p>Respond to new enquiries immediately.</p>
+              <h3>Clear Ownership</h3>
+              <p>Every qualified lead is routed to a named advisor.</p>
             </article>
             <article>
               <span>02</span>
-              <h3>Consistent Follow-Up</h3>
-              <p>Every qualified lead gets the next action.</p>
+              <h3>Visible Follow-Up</h3>
+              <p>Statuses, callbacks and notes show what should happen next.</p>
             </article>
             <article>
               <span>03</span>
-              <h3>Less Manual CRM Work</h3>
-              <p>Capture activities and keep records current.</p>
+              <h3>Workable Cold Data</h3>
+              <p>Large imports are released in focused batches instead of one huge list.</p>
             </article>
             <article>
               <span>04</span>
-              <h3>More Sales Focus</h3>
-              <p>Spend more time closing and less time on admin.</p>
+              <h3>Manager Clarity</h3>
+              <p>Workloads, yield, sources and project interest are visible team-wide.</p>
             </article>
           </div>
         </div>
@@ -857,7 +849,7 @@ export function ContactTeamSection() {
               </div>
             </div>
             <p className="contact-blurb">
-              Discuss enterprise deployments, CRM integrations, sales workflows, and custom onboarding for developer and brokerage teams.
+              Discuss CRM deployments, lead-source workflows, sales operations, and custom onboarding for developer and brokerage teams.
             </p>
             <div className="contact-details-list">
               <div className="contact-detail-row">
@@ -899,7 +891,7 @@ export function ContactTeamSection() {
               </div>
             </div>
             <p className="contact-blurb">
-              Discuss AI calling models, WhatsApp automation architectures, telephony APIs, database syncing, and custom developer pipelines.
+              Discuss WhatsApp qualification flows, assignment logic, database imports, notifications, reporting, and custom CRM workflows.
             </p>
             <div className="contact-details-list">
               <div className="contact-detail-row">

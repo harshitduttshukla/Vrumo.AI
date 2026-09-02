@@ -4,11 +4,9 @@ import { contacts } from '@/lib/contacts';
 const platformLinks = [
   ['Real Estate CRM', '/real-estate-crm'],
   ['AI Lead Management', '/real-estate-lead-management'],
-  ['AI Calling', '/real-estate-ai-calling'],
   ['WhatsApp AI', '/real-estate-whatsapp-automation'],
   ['Sales Automation', '/real-estate-sales-automation'],
   ['Follow-Up Automation', '/real-estate-lead-follow-up'],
-  ['Site Visit Automation', '/real-estate-site-visit-automation'],
   ['Real Estate AI Platform', '/real-estate-ai-automation'],
 ];
 
@@ -24,7 +22,6 @@ const blogCategoryLinks = [
   ['AI & Automation', '/blog/real-estate-ai'],
   ['Sales & Workflows', '/blog/real-estate-sales'],
   ['WhatsApp Automation', '/blog/real-estate-whatsapp'],
-  ['AI Voice Calling', '/blog/real-estate-ai-calling'],
   ['Lead Management', '/blog/real-estate-lead-management'],
 ];
 
@@ -48,8 +45,8 @@ export function Footer() {
               Vrumo <b>AI</b>
             </span>
           </Link>
-          <p>AI CRM and automation for real estate teams.</p>
-          <span className="brand-tagline">Capture. Qualify. Follow up. Convert.</span>
+          <p>WhatsApp lead management and CRM operations for real estate teams.</p>
+          <span className="brand-tagline">Capture. Qualify. Assign. Follow up.</span>
 
           {/* Official Contacts */}
           <div className="footer-contacts-section">
@@ -120,7 +117,7 @@ export function Footer() {
 
       <div className="wrap footer-bottom">
         <span>© {new Date().getFullYear()} Vrumo AI. All rights reserved.</span>
-        <span>AI-POWERED REAL ESTATE CRM & AUTOMATION</span>
+        <span>REAL ESTATE CRM & WHATSAPP LEAD MANAGEMENT</span>
         <div className="footer-bottom-contacts">
           <a href={contacts.divyaman.mailtoHref}>{contacts.divyaman.email}</a>
           <span>·</span>

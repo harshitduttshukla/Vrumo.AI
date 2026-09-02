@@ -5,34 +5,40 @@ import Link from 'next/link';
 
 const leads = [
   {
-    initials: 'RS',
-    name: 'Rahul Sharma',
-    property: '3 BHK · Gurgaon',
-    budget: '₹1.2 Cr',
-    score: 92,
-    source: 'WhatsApp',
-    location: 'Sector 65, Gurgaon',
-    visit: 'Sat · 11:30 AM',
+    initials: 'PS',
+    name: 'Priya Sharma',
+    property: 'The Westin Residences',
+    budget: '₹5–7 Cr',
+    status: 'New',
+    source: 'Meta Ad',
+    country: 'India',
+    purpose: 'Self Use',
+    preferredCall: 'Morning, weekdays',
+    progress: 86,
   },
   {
-    initials: 'PM',
-    name: 'Priya Mehta',
-    property: '2 BHK · Noida',
-    budget: '₹85 L',
-    score: 78,
-    source: 'Website',
-    location: 'Sector 150, Noida',
-    visit: 'Awaiting slot',
+    initials: 'MA',
+    name: 'Mohammed Al Rashid',
+    property: 'Al Marjan Island',
+    budget: 'AED 2M',
+    status: 'Call back',
+    source: 'Direct WhatsApp',
+    country: 'Dubai',
+    purpose: 'Capital Growth',
+    preferredCall: 'Today, 3:00 PM',
+    progress: 66,
   },
   {
-    initials: 'AV',
-    name: 'Amit Verma',
-    property: 'Villa · Pune',
-    budget: '₹2.4 Cr',
-    score: 88,
-    source: 'Campaign',
-    location: 'Hinjawadi, Pune',
-    visit: 'Sun · 04:00 PM',
+    initials: 'RV',
+    name: 'Rohit Verma',
+    property: 'Trump Tower',
+    budget: '₹7–10 Cr',
+    status: 'Follow up',
+    source: 'Broadcast reply',
+    country: 'India',
+    purpose: 'Monthly Income',
+    preferredCall: 'In 10 days',
+    progress: 54,
   },
 ];
 
@@ -52,11 +58,11 @@ export function Hero() {
               AI CRM FOR REAL ESTATE
             </div>
             <h1>
-              Turn Real Estate Leads Into Deals—<em>Automatically.</em>
+              From WhatsApp Enquiry to Sales Follow-Up—<em>Without Losing Context.</em>
             </h1>
             <p className="hero-lead">
-              Vrumo combines CRM, AI calling, WhatsApp automation, lead qualification, follow-ups, and sales workflows
-              into one intelligent system built for real estate teams.
+              Vrumo brings chatbot qualification, lead assignment, role-based dashboards, callback reminders,
+              transcripts, notes and source reporting into one real estate CRM.
             </p>
             <div className="hero-actions">
               <Link
@@ -66,11 +72,11 @@ export function Hero() {
                 Book a Demo <span aria-hidden="true">↗</span>
               </Link>
               <a className="button button-quiet" href="#how-it-works">
-                See How It Works <span aria-hidden="true">↓</span>
+                See the CRM Workflow <span aria-hidden="true">↓</span>
               </a>
             </div>
             <p className="hero-assurance">
-              <span aria-hidden="true">✓</span> Built around your real estate sales process
+              <span aria-hidden="true">✓</span> Grounded in a live real estate CRM deployment
             </p>
           </div>
 
@@ -89,10 +95,10 @@ export function Hero() {
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                   </svg>
-                  <span>app.vrumo.ai / pipeline</span>
+                  <span>crm / sales-dashboard</span>
                 </div>
                 <div className="chrome-actions">
-                  <span className="chrome-status"><span className="status-pulse" /> LIVE CRM</span>
+                  <span className="chrome-status"><span className="status-pulse" /> SAMPLE WORKFLOW</span>
                 </div>
               </div>
 
@@ -100,7 +106,7 @@ export function Hero() {
                 <div className="crm-topbar">
                   <div className="crm-brand">
                     <span className="crm-brandmark">V</span>
-                    <span>Vrumo CRM</span>
+                    <span>Real Estate CRM</span>
                   </div>
                   <div className="crm-top-actions">
                     <span className="sync-status">
@@ -125,35 +131,35 @@ export function Hero() {
                   <div className="crm-content">
                     <div className="crm-heading-row">
                       <div>
-                        <span className="crm-overline">SALES PIPELINE</span>
-                        <h2>Active enquiries</h2>
+                        <span className="crm-overline">SALES ADVISOR DASHBOARD</span>
+                        <h2>Assigned leads</h2>
                       </div>
                       <span className="crm-date">30 AUG 2026</span>
                     </div>
 
                     <div className="metric-grid">
                       <article>
+                        <span>TOTAL LEADS</span>
+                        <strong>500</strong>
+                        <small>Active batch</small>
+                      </article>
+                      <article>
                         <span>NEW LEADS</span>
-                        <strong>24</strong>
-                        <small>+8 today</small>
+                        <strong>453</strong>
+                        <small>Untouched</small>
                       </article>
                       <article>
-                        <span>QUALIFIED</span>
-                        <strong>18</strong>
-                        <small>Ready for sales</small>
-                      </article>
-                      <article>
-                        <span>SITE VISITS</span>
-                        <strong>07</strong>
-                        <small>This week</small>
+                        <span>CALLBACKS</span>
+                        <strong>28</strong>
+                        <small>Scheduled</small>
                       </article>
                     </div>
 
                     <div className="crm-workspace">
                       <div className="lead-list">
                         <div className="list-label">
-                          <span>INBOUND LEADS</span>
-                          <span>Score</span>
+                          <span>ASSIGNED LEADS</span>
+                          <span>Status</span>
                         </div>
                         {leads.map((item, index) => (
                           <button
@@ -169,11 +175,11 @@ export function Hero() {
                               <small>{item.property}</small>
                             </span>
                             <span className="lead-budget">{item.budget}</span>
-                            <span className="score-pill">{item.score}%</span>
+                            <span className="score-pill">{item.status}</span>
                           </button>
                         ))}
                         <div className="list-footer">
-                          <span>AI is monitoring 21 more enquiries</span>
+                          <span>Dashboard refreshes every 10 seconds</span>
                           <i />
                         </div>
                       </div>
@@ -183,25 +189,25 @@ export function Hero() {
                           <div className="lead-identity">
                             <span className="lead-avatar lead-avatar-large">{lead.initials}</span>
                             <div>
-                              <small>NEW ENQUIRY</small>
+                              <small>LEAD RECORD</small>
                               <h3>{lead.name}</h3>
                             </div>
                           </div>
-                          <span className="qualified-badge">✓ Qualified</span>
+                          <span className="qualified-badge">{lead.status}</span>
                         </div>
                         <div className="intent-row">
                           <div>
-                            <small>LEAD SCORE</small>
-                            <strong>{lead.score}%</strong>
+                            <small>PREFERRED CALL</small>
+                            <strong>{lead.preferredCall}</strong>
                           </div>
                           <div className="score-track">
-                            <i style={{ width: `${lead.score}%` }} />
+                            <i style={{ width: `${lead.progress}%` }} />
                           </div>
-                          <span>High intent</span>
+                          <span>{lead.status}</span>
                         </div>
                         <dl className="lead-facts">
                           <div>
-                            <dt>PROPERTY</dt>
+                            <dt>PROJECT</dt>
                             <dd>{lead.property}</dd>
                           </div>
                           <div>
@@ -209,12 +215,12 @@ export function Hero() {
                             <dd>{lead.budget}</dd>
                           </div>
                           <div>
-                            <dt>LOCATION</dt>
-                            <dd>{lead.location}</dd>
+                            <dt>COUNTRY</dt>
+                            <dd>{lead.country}</dd>
                           </div>
                           <div>
-                            <dt>SOURCE</dt>
-                            <dd>{lead.source}</dd>
+                            <dt>PURPOSE</dt>
+                            <dd>{lead.purpose}</dd>
                           </div>
                         </dl>
                         <div className="ai-activity">
@@ -224,20 +230,20 @@ export function Hero() {
                             </span>
                             <small>Just now</small>
                           </div>
-                          <p>Requirement captured and matched to active inventory.</p>
+                          <p>Qualification answers and conversation history are saved to this lead.</p>
                           <ul>
                             <li>
                               <span>✓</span>
-                              <b>WhatsApp reply sent</b>
+                              <b>WhatsApp transcript captured</b>
                             </li>
                             <li>
                               <span>✓</span>
-                              <b>Site visit</b>
-                              <em>{lead.visit}</em>
+                              <b>Advisor assigned</b>
+                              <em>Round-robin</em>
                             </li>
                             <li>
                               <span>✓</span>
-                              <b>CRM record updated</b>
+                              <b>Source and status logged</b>
                             </li>
                           </ul>
                         </div>
@@ -271,8 +277,8 @@ export function Hero() {
                   </div>
                 </div>
                 <div className="mobile-score-box">
-                  <strong>{lead.score}%</strong>
-                  <small>High Intent</small>
+                  <strong>{lead.status}</strong>
+                  <small>Lead status</small>
                 </div>
               </div>
 
@@ -282,8 +288,8 @@ export function Hero() {
                   <strong>{lead.budget}</strong>
                 </div>
                 <div>
-                  <small>LOCATION</small>
-                  <strong>{lead.location}</strong>
+                  <small>COUNTRY</small>
+                  <strong>{lead.country}</strong>
                 </div>
                 <div>
                   <small>SOURCE</small>
@@ -294,26 +300,26 @@ export function Hero() {
               <div className="mobile-ai-activity">
                 <div className="mobile-activity-title">
                   <span className="activity-dot" />
-                  <span>AI WORKFLOW ACTIONS</span>
+                  <span>CRM RECORD</span>
                 </div>
                 <ul className="mobile-activity-list">
                   <li>
                     <span className="check-icon">✓</span>
-                    <span>Requirement captured (3 BHK)</span>
+                    <span>Project and budget captured</span>
                   </li>
                   <li>
                     <span className="check-icon">✓</span>
-                    <span>WhatsApp brochure dispatched</span>
+                    <span>Full WhatsApp transcript saved</span>
                   </li>
                   <li>
                     <span className="check-icon">✓</span>
                     <span>
-                      Site visit confirmed: <b>{lead.visit}</b>
+                      Preferred call: <b>{lead.preferredCall}</b>
                     </span>
                   </li>
                   <li>
                     <span className="check-icon">✓</span>
-                    <span>CRM pipeline updated automatically</span>
+                    <span>Owner, source and status visible</span>
                   </li>
                 </ul>
               </div>
@@ -352,22 +358,22 @@ export function Hero() {
           <article>
             <span>02</span>
             <div>
-              <h2>Qualify Automatically</h2>
-              <p>Understand intent, budget, location and requirements.</p>
+              <h2>Qualify in WhatsApp</h2>
+              <p>Capture project, country, budget, purpose and timeline.</p>
             </div>
           </article>
           <article>
             <span>03</span>
             <div>
-              <h2>Follow Up Without Chasing</h2>
-              <p>Automated messages, calling and follow-up workflows.</p>
+              <h2>Assign the Right Advisor</h2>
+              <p>Use project rules and round-robin distribution.</p>
             </div>
           </article>
           <article>
             <span>04</span>
             <div>
-              <h2>Keep CRM Updated</h2>
-              <p>Every conversation and action stays synchronized.</p>
+              <h2>Never Miss a Callback</h2>
+              <p>Schedule the time, notify the owner and keep an audit trail.</p>
             </div>
           </article>
         </div>

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     keywords: [
       page.targetKeyword,
       'real estate CRM',
-      'AI CRM for real estate',
+      'WhatsApp CRM for real estate',
       'real estate lead management',
       'real estate sales automation',
       'WhatsApp automation real estate',
@@ -66,101 +66,44 @@ function ProductPanel({
             <b>Vrumo WhatsApp Assistant</b>
           </div>
           <small>
-            VERIFIED WABA <i className="live-dot" />
+            TRANSCRIPT ACTIVE <i className="live-dot" />
           </small>
         </div>
         <div className="seo-panel-content">
           <div className="chat-simulation-container">
             <div className="chat-bubble incoming">
-              <span className="chat-sender">Rahul Sharma</span>
-              <p>Hi, I saw your ad for Godrej Palm Retreat. Is the 3 BHK layout available?</p>
+              <span className="chat-sender">Priya Sharma</span>
+              <p>Hi, I&apos;m interested in The Westin Residences.</p>
               <time>10:42 AM</time>
             </div>
             <div className="chat-bubble outgoing">
               <span className="chat-sender">Vrumo Assistant</span>
               <p>
-                Hello Rahul! Yes, we have 3 BHK luxury residences (1,850 sq.ft) starting at ₹1.45 Cr in Sector 150.
-                Here is the verified e-brochure and floor plan layout:
+                Welcome. Is this purchase for Self Use, Capital Growth or Monthly Income / Renting?
               </p>
-              <div className="chat-attachment-pill">📄 Godrej_Palm_3BHK_Brochure.pdf (4.2 MB)</div>
               <time>10:42 AM ✓✓</time>
             </div>
             <div className="chat-bubble incoming">
-              <p>Looks great. Can I visit this Saturday around 11:30 AM?</p>
+              <p>Self Use. My budget is ₹5–7 Cr and I prefer a morning call.</p>
               <time>10:43 AM</time>
             </div>
             <div className="chat-bubble outgoing">
               <p>
-                ✓ Slot confirmed for Sat, 11:30 AM! Your host <b>Amit Kapoor (Senior Sales Advisor)</b> will meet you at
-                the Experience Lounge.
+                Thank you. Your requirements are saved and a sales advisor will contact you at your preferred time.
               </p>
-              <div className="chat-map-pin">📍 Location Pin & VIP Entry Pass Dispatched</div>
               <time>10:43 AM ✓✓</time>
             </div>
           </div>
           <div className="panel-status-bar">
-            <span>● CRM Stage: Site Visit Confirmed</span>
-            <span>Intent: 94% High</span>
+            <span>● CRM Status: New</span>
+            <span>Owner: Assigned</span>
           </div>
         </div>
       </div>
     );
   }
 
-  // AI Calling simulation panel
-  if (slug === 'real-estate-ai-calling') {
-    return (
-      <div className="seo-product-panel calling-theme-panel" aria-label={`Vrumo AI Voice Agent for ${title}`}>
-        <div className="seo-panel-bar">
-          <div>
-            <span>V</span>
-            <b>Vrumo Voice Agent</b>
-          </div>
-          <small>
-            CALL ACTIVE <i className="live-dot" />
-          </small>
-        </div>
-        <div className="seo-panel-content">
-          <div className="call-header-box">
-            <div className="caller-info">
-              <span className="lead-avatar lead-avatar-large">RS</span>
-              <div>
-                <small>INBOUND AD CALL</small>
-                <h3>Rahul Sharma</h3>
-                <span>DLF Privana Campaign</span>
-              </div>
-            </div>
-            <div className="call-timer-badge">00:48</div>
-          </div>
-
-          <div className="voice-wave-large">
-            {[20, 38, 16, 52, 28, 60, 22, 44, 68, 30, 48, 18, 56, 32, 50, 24, 42, 16, 34, 22, 54, 28, 44, 20].map(
-              (h, i) => (
-                <i key={i} style={{ height: `${h}px` }} />
-              )
-            )}
-          </div>
-
-          <div className="realtime-transcription-box">
-            <small>LIVE EXTRACTION</small>
-            <p>
-              <b>AI:</b> &quot;...Understood, ₹1.5 Cr budget with 3 BHK configuration. Let me reserve a VIP tour for this
-              Sunday...&quot;
-            </p>
-          </div>
-
-          <div className="call-tags-row">
-            <span>✓ Budget: ₹1.5 Cr</span>
-            <span>✓ 3 BHK Gurugram</span>
-            <span>✓ Pre-Approved HDFC</span>
-            <span>✓ Visit: Sun 4 PM</span>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // Default / CRM / Developer / Pipeline Panel
+  // Default CRM / developer / advisor panel
   return (
     <div className="seo-product-panel" aria-label={`Vrumo product interface showing ${title}`}>
       <div className="seo-panel-bar">
@@ -178,23 +121,23 @@ function ProductPanel({
             <small>{label}</small>
             <h2>{title}</h2>
           </div>
-          <span className="active-tag">AI ACTIVE</span>
+          <span className="active-tag">LEAD ACTIVE</span>
         </div>
         <div className="seo-lead-summary">
-          <span className="lead-avatar">RS</span>
+          <span className="lead-avatar">PS</span>
           <div>
             <small>LEAD</small>
-            <b>Rahul Sharma</b>
+            <b>Priya Sharma</b>
           </div>
           <div>
-            <small>REQUIREMENT</small>
-            <b>3 BHK · Gurgaon</b>
+            <small>PROJECT</small>
+            <b>The Westin Residences</b>
           </div>
           <div>
             <small>BUDGET</small>
-            <b>₹1.2 Cr – ₹1.5 Cr</b>
+            <b>₹5–7 Cr</b>
           </div>
-          <em className="score-badge">92% Intent</em>
+          <em className="score-badge">Owner: Sherlin</em>
         </div>
         <div className="seo-activity-grid">
           <div className="seo-step-list">
@@ -207,19 +150,19 @@ function ProductPanel({
             ))}
           </div>
           <div className="seo-insight">
-            <small>AI QUALIFICATION REPORT</small>
+            <small>LEAD ATTRIBUTES</small>
             <div>
-              <span>Intent Score</span>
-              <b>92% High</b>
+              <span>Current status</span>
+              <b>Call back</b>
             </div>
             <i>
               <em />
             </i>
             <ul>
-              <li>✓ Budget verified with inventory</li>
-              <li>✓ Location: Sector 65, Gurgaon</li>
-              <li>✓ Timeline: Ready to visit Sat</li>
-              <li>✓ Financing: Pre-approved bank loan</li>
+              <li>✓ Country: India</li>
+              <li>✓ Purpose: Self Use</li>
+              <li>✓ Preferred call: Morning</li>
+              <li>✓ Source: Meta Ad</li>
             </ul>
             <Link
               href="/contact"
@@ -323,9 +266,9 @@ export default async function SeoLandingPage({ params }: Props) {
                   </a>
                 </div>
                 <div className="seo-hero-badges">
-                  <span>✓ 60-Second Lead Response</span>
-                  <span>✓ Official WhatsApp API</span>
-                  <span>✓ AI Voice & Telephony</span>
+                  <span>✓ Role-Based Dashboards</span>
+                  <span>✓ WhatsApp Qualification</span>
+                  <span>✓ Callback Reminders</span>
                 </div>
               </div>
               <ProductPanel slug={page.slug} label={page.visualLabel} title={page.visualTitle} steps={page.workflow} />
@@ -339,7 +282,7 @@ export default async function SeoLandingPage({ params }: Props) {
             <div className="seo-section-heading">
               <span className="section-kicker">WHY THIS WORKFLOW MATTERS</span>
               <h2>Fix the Operational Gaps That Slow Property Sales Down.</h2>
-              <p>Traditional real estate sales operations leak high-value leads at every handoff. Vrumo eliminates the delay.</p>
+              <p>Real estate sales operations lose visibility when the source, owner, context and next action live in different tools.</p>
             </div>
             <div className="seo-three-grid">
               {page.pains.map(([title, text], index) => (
@@ -360,7 +303,7 @@ export default async function SeoLandingPage({ params }: Props) {
               <span className="section-kicker">BUILT AROUND REAL ESTATE</span>
               <h2>Give Every Lead a Clear Next Action.</h2>
               <p>
-                Vrumo keeps buyer requirements, WhatsApp chat histories, voice call summaries, and site visit schedules attached to the opportunity record.
+                Vrumo keeps buyer requirements, WhatsApp chat history, call outcomes, callback schedules, notes and activity attached to the lead record.
               </p>
               <Link className="button button-quiet" href="/contact">
                 Discuss Your Workflow ↗
@@ -457,7 +400,7 @@ export default async function SeoLandingPage({ params }: Props) {
               <span className="section-kicker">START WITH YOUR PRIMARY BOTTLENECK</span>
               <h2>Show Us Where Your Property Leads Get Stuck.</h2>
               <p>
-                We&apos;ll map your sales funnel and demonstrate where Vrumo AI can capture context, automate repetitive qualification, and deliver scheduled site visits.
+                We&apos;ll map your lead sources, qualification questions, assignment rules, advisor workflow and reporting needs to a practical CRM setup.
               </p>
               <div className="cta-actions">
                 <a
