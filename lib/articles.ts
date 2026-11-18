@@ -1283,7 +1283,7 @@ export const articles: Article[] = [
   {
     slug: 'ai-calling-real-estate',
     title: 'AI Calling for Real Estate: How AI Voice Agents Handle Property Enquiries',
-    metaTitle: 'AI Calling for Real Estate: Voice Agents in Property Sales | Vrumo AI',
+    metaTitle: 'AI Calling Agent for Real Estate: How Voice AI Qualifies Leads | Vrumo AI',
     metaDescription: 'Explore AI calling for real estate: how autonomous voice agents qualify inbound leads, conduct outbound follow-ups, and book site visits over natural phone calls.',
     h1: 'AI Calling for Real Estate: How AI Voice Agents Handle Property Enquiries',
     excerpt: 'An in-depth guide to AI voice calling in property sales: speech latency, conversational qualification scripts, telephony integration, and CRM sync.',

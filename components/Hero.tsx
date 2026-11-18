@@ -272,7 +272,7 @@ export function Hero() {
                   <span className="mobile-lead-avatar">{lead.initials}</span>
                   <div>
                     <small>NEW ENQUIRY</small>
-                    <h3>{lead.name}</h3>
+                    <p className="mobile-lead-name">{lead.name}</p>
                     <span>{lead.property}</span>
                   </div>
                 </div>
@@ -333,6 +333,8 @@ export function Hero() {
                       type="button"
                       className={`selector-pill ${selectedLead === idx ? 'is-active' : ''}`}
                       onClick={() => setSelectedLead(idx)}
+                      aria-pressed={selectedLead === idx}
+                      aria-label={`Show lead ${item.name}`}
                     >
                       {item.initials}
                     </button>

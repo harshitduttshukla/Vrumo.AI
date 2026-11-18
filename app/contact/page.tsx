@@ -5,16 +5,16 @@ import { Footer } from '@/components/Footer';
 import { contacts } from '@/lib/contacts';
 
 export const metadata: Metadata = {
-  title: 'Talk to Vrumo AI | Real Estate CRM & Sales Automation',
+  title: 'Book a Real Estate CRM Demo | Vrumo AI',
   description:
-    'Talk to the Vrumo team about real estate CRM, WhatsApp qualification, lead assignment, callback reminders and sales reporting.',
+    'Book a free 25-minute real estate CRM demo with the Vrumo team: WhatsApp qualification, lead assignment, callback reminders and sales reporting, mapped to your workflow.',
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
     type: 'website',
     url: '/contact',
-    title: 'Talk to Vrumo AI | Real Estate CRM & Sales Automation',
+    title: 'Book a Real Estate CRM Demo | Vrumo AI',
     description:
       'Schedule a personalized consultation with the Vrumo AI team for real estate developers, brokers, and sales organizations.',
     images: [{ url: '/og.png', width: 1536, height: 1024, alt: 'Talk to Vrumo AI' }],
@@ -39,7 +39,7 @@ export default function ContactPage() {
               <span className="hero-eyebrow">
                 <i className="live-dot" /> DIRECT TEAM ACCESS & CONSULTATION
               </span>
-              <h1>Talk to Vrumo AI</h1>
+              <h1>Book a Real Estate CRM Demo</h1>
               <p className="contact-hero-lead">
                 Tell us how your leads arrive, how they are assigned and where follow-ups are getting lost. We&apos;ll map the workflow to a practical CRM setup.
               </p>

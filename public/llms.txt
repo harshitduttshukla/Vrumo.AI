@@ -1,0 +1,44 @@
+# Vrumo AI
+
+> Vrumo AI is a real estate CRM and WhatsApp lead-management platform for Indian property developers, channel partners and real estate agents. It qualifies WhatsApp enquiries (project, budget, country, purpose, timeline, preferred call time), assigns leads to advisors, batches cold databases, schedules callback reminders, keeps full transcripts and notes, and reports by lead source with role-based dashboards.
+
+## Product pages
+
+- [A Real Estate CRM Built Around Actual Sales Work](https://www.vrumo.in/real-estate-crm)
+- [Automate the Handoff, Not the Human Relationship](https://www.vrumo.in/real-estate-ai-automation)
+- [Make Every Lead Source Workable](https://www.vrumo.in/real-estate-lead-management)
+- [Keep the Sales Queue Current After Every Call](https://www.vrumo.in/real-estate-sales-automation)
+- [Turn Every Promised Callback Into a Visible Next Action](https://www.vrumo.in/real-estate-lead-follow-up)
+- [Turn a WhatsApp Conversation Into a Complete Lead Record](https://www.vrumo.in/real-estate-whatsapp-automation)
+- [A Multi-Project CRM for Developer Sales Teams](https://www.vrumo.in/ai-crm-for-real-estate-developers)
+- [A Daily Lead Queue Your Advisors Can Actually Work](https://www.vrumo.in/ai-crm-for-real-estate-agents)
+
+## Company
+
+- [About Vrumo AI](https://www.vrumo.in/about)
+- [Contact / book a demo](https://www.vrumo.in/contact)
+- [Resources: Real Estate AI Playbook](https://www.vrumo.in/resources)
+- [Blog](https://www.vrumo.in/blog)
+
+## Articles
+
+- https://www.vrumo.in/blog/what-is-real-estate-crm
+- https://www.vrumo.in/blog/best-real-estate-crm-features
+- https://www.vrumo.in/blog/real-estate-crm-vs-spreadsheets
+- https://www.vrumo.in/blog/how-real-estate-crm-improves-sales
+- https://www.vrumo.in/blog/real-estate-crm-for-developers
+- https://www.vrumo.in/blog/ai-in-real-estate
+- https://www.vrumo.in/blog/real-estate-ai-automation
+- https://www.vrumo.in/blog/ai-sales-assistant-real-estate
+- https://www.vrumo.in/blog/real-estate-sales-automation
+- https://www.vrumo.in/blog/real-estate-lead-qualification-ai
+- https://www.vrumo.in/blog/whatsapp-automation-real-estate
+- https://www.vrumo.in/blog/real-estate-whatsapp-follow-up
+- https://www.vrumo.in/blog/whatsapp-crm-real-estate
+- https://www.vrumo.in/blog/ai-calling-real-estate
+- https://www.vrumo.in/blog/ai-voice-agent-real-estate
+- https://www.vrumo.in/blog/real-estate-missed-call-automation
+- https://www.vrumo.in/blog/real-estate-lead-management
+- https://www.vrumo.in/blog/real-estate-lead-follow-up
+- https://www.vrumo.in/blog/real-estate-lead-nurturing
+- https://www.vrumo.in/blog/real-estate-lead-scoring

@@ -236,7 +236,7 @@ export default async function BlogSlugPage({ params }: Props) {
 
                   <div className="sidebar-cta-widget">
                     <span className="widget-label">VRUMO AI PLATFORM</span>
-                    <h4>Automate Real Estate Sales</h4>
+                    <p className="sidebar-cta-title">Automate Real Estate Sales</p>
                     <p>Capture leads, qualify intent on WhatsApp, and schedule site visits automatically.</p>
                     <Link className="button button-primary" href="/contact">
                       Book a Demo <span>↗</span>

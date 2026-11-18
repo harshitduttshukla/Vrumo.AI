@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: 'Vrumo AI',
-  url: 'https://vrumo-ai.vercel.app',
+  url: 'https://www.vrumo.in',
   email: 'divyamanpal490@gmail.com',
   secondaryEmail: 'harshitshukla6388@gmail.com',
   phone: '+91 63886 76760',

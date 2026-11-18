@@ -465,6 +465,8 @@ export function CRMSection() {
           <div className="pipeline-mobile-tabs" role="tablist" aria-label="Pipeline Stages">
             <button
               type="button"
+              role="tab"
+              aria-selected={activeTab === 'ALL'}
               className={`pipe-tab ${activeTab === 'ALL' ? 'is-active' : ''}`}
               onClick={() => setActiveTab('ALL')}
             >
@@ -474,6 +476,8 @@ export function CRMSection() {
               <button
                 key={stage}
                 type="button"
+                role="tab"
+                aria-selected={activeTab === stage}
                 className={`pipe-tab ${activeTab === stage ? 'is-active' : ''}`}
                 onClick={() => setActiveTab(stage)}
               >

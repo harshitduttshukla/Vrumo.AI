@@ -31,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [
+  const entries: MetadataRoute.Sitemap = [
     {
       url: siteConfig.url,
       lastModified: currentDate,
@@ -66,4 +66,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryPages,
     ...articlePages,
   ];
+
+  // Drop duplicate URLs (e.g. a category and an article sharing a slug).
+  const seen = new Set<string>();
+  return entries.filter((entry) => !seen.has(entry.url) && seen.add(entry.url));
 }
